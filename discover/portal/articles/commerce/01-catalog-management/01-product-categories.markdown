@@ -1,10 +1,9 @@
 # Product Categories
 
-Products can be associated with each other in *Categories*. These associations
-allow groups of products to be handled as a single unit. For example, a product
-category could be used to apply discounts or other offers to a set of products,
-to assist buyers in finding products, or to promote certain products to
-a specified user segment.
+Products can be organized into *Categories*. These groupings allow products to be 
+handled as a single unit. For example, a product category could be used to 
+apply discounts or other offers to a set of products, to assist buyers in 
+finding products, or to promote certain products to a specified user segment.
 
 To organize products into categories, you must create the categories first and
 then assign products to them.
@@ -29,7 +28,7 @@ drop-down menu in *Asset Categories Web*. Then return to *Site Menu* &rarr;
 
 $$$
 
-## Adding Products to Categories
+## Adding and Removing Products From Categories
 
 To add a product to one or more categories:
 
@@ -40,7 +39,7 @@ To add a product to one or more categories:
 
 3.  Click Save.
 
-A product can be removed from a category the same way--just uncheck the boxes in
+A product can be removed from a category the same way by unchecking the boxes in
 step 2. Alternatively, several products can be removed at once using the
 category application:
 
@@ -50,13 +49,15 @@ category application:
 
 2.  Check the box next to each product you want to remove from the category.
 
+NOTE: Currently I don't see a checkbox next to products.
+
 3.  Click *Remove*.
 
 ## Other Category Associations 
 
 You may want to associate more than just products with your categories. Creating
 relationships with pages and images can give you greater capabilities to
-display category content dynamically.
+display category content dynamically. NOTE: Last sentence is very unclear.
 
 ### Category Display Page
 
@@ -65,12 +66,15 @@ a category and a specified page. This relationship makes it easy to display and
 organize content or applications related to to that category, as changes made
 to the category will be automatically reflected on the page. A typical use case
 might involve using the page to display category content for customers, but the
-feature could just as easily create a page for internal use.
+feature could just as easily create a page for internal use. NOTE: Revise. The
+use case is not helpful in understanding why category display pages exist.
 
 To create a category display page:
 
 1.  Create a page. At any point, populate the page with whatever content or
-    applications suit your purposes.
+    applications suit your purposes. NOTE: Second sentence is ot helpful for 
+    these instructions. Consider adding this as  a note after the instructions
+    are completed.
 
 2.  Find the category you want to associate with the page in *Site Menu* &rarr;
     *Content* &rarr; *Categories*. Then click
@@ -84,9 +88,9 @@ To create a category display page:
 ### Images
 
 You may want to upload images and associate them with a product category. These
-images could be displayed on a category display page, on the display pages for
+images can be displayed on a category display page, on the display pages for
 products that are assigned to the category, or anywhere else you want to display
-category content.
+category content. NOTE: use cases are unclear.
 
 To assign images to a category:
 
@@ -94,8 +98,7 @@ To assign images to a category:
     *Categories*. Then click ![Options](../../../images/icon-options.png)
     &rarr; *Edit*, and select the *images* tab.
 
-2.  Click on the [Add](../../../images/icon-add.png) button and make selections
-    from the pop-up to either upload an image or choose one from the Documents
-    and Media Repository.
+2.  Click on the [Add](../../../images/icon-add.png) button. You can either 
+    upload an image or choose one from the Documents and Media Repository. 
 
 3.  Click *Save*.
