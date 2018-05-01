@@ -63,7 +63,7 @@ category content.
 
 The category display page is a feature that creates a relationship between
 a category, a specified page, and a URL for that page. This relationship makes
-it easy to display and organize content or applications related to to that
+it easy to display and organize content or applications related to that
 category, as changes made to the category will be automatically reflected on the
 page. A typical use case might involve using the page to display category
 content for customers.
