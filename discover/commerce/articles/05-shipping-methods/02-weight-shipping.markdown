@@ -1,18 +1,31 @@
-# By Weight Shipping Method [](id=by-weight-shipping-method)
+# Variable Rate Shipping [](id=by-weight-shipping-method)
 
-Shipping by weight is a slightly different animal, requiring you to do a little
-math. Wait, come back! It's really quite simple-and it allows you to set
-appropriate shipping costs for every product in your catalog without the
-laborious process of manually creating a shipping exception for every item you
-sell. Dynamic shipping allows you to implement a formula that will automatically
-set shipping rates on the basis of weight and price.
+Variable rate shipping uses a formula to calculate shipping costs on the basis
+of three factors: the order's total weight, it's subtotal (cost before shipping
+and taxes), and any fixed price you choose to impose. To what degree each factor
+is weighted---if at all---is up to you.
+
+You can create multiple different shipping methods with variable rates. For
+example, you might create "Standard Ground" method with a relatively low cost
+per unit of weight, as well as "Two-Day Air" method that calculates costs in the
+same way but results in a higher price.
 
 ## Measurement Units [](id=measurement-units)
 
-There's a little bit of housekeeping to take care of before you can
-ship by weight. Of course, every product in your catalog will need to specify
-a weight [link to catalog/SKUs]. Before you do that, however, you may need to
-create measurement units.
+In order to use product weight to calculate shipping costs, the catalog must
+specify each product's weight (see
+[Configuration](/web/liferay-emporio/documentation/-/knowledge_base/7-1/configuration#shipping)).
+First, however, you may need to create measurement units.
+
+If you built your store using a site initializer, measurement units probably
+came prepackaged. However, you may need to make make changes if you 
+
+
+
+There's a little bit of housekeeping to take care of before you can ship by
+weight. Of course, every product in your catalog will need to specify a weight
+[link to catalog/SKUs]. Before you do that, however, you may need to create
+measurement units.
 
 If you built you store from a site template, measurement units will already be
 in place. But if you built your site from scratch or prefer archaic units of
