@@ -10,6 +10,73 @@ example, you might create "Standard Ground" method with a relatively low cost
 per unit of weight, as well as "Two-Day Air" method that calculates costs in the
 same way but results in a higher price.
 
+## Creating a Variable Rate Shipping Method
+
+Variable-rate shipping costs are determined by the following formula: shipping
+costs = [fixed price] + ([order total weight] x [rate unit weight price])
++ ([order subtotal] x [rate percentage])
+
+Follow these steps:
+
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click on the
+    *Shipping Method* tab. Click on the *Variable Rate* method and then on the
+    *Shipping Options* tab.
+
+2.  Click the ![Add](../../images/icon-add.png) button and fill in the
+    following fields:
+
+    **Name:** this is the name that buyers will see when they are prompted to
+    select a shipping option.
+
+    **Description:** Information about the method---delivery time, guarantees,
+    insurance and the like---should go in this field.
+
+    **Priority:** Sets the order in which methods will be displayed. Lower
+    numbers come first.
+
+3.  Click *Save*. Then click the *Shipping Option Settings* tab.
+
+4.  Click the ![Add](../../images/icon-add.png) button and fill in the following
+    fields. Then click *Save*.
+
+**Shipping Option:** Select the shipping option to which this setting should be
+applied. The first time through, you should select the option you named in step
+2.
+
+**Warehouse:** Select a warehouse if you want this method to apply only to
+shipments from one location. Leave blank to use this method for all warehouses.
+
+**Country, Region, Zip:** Make an entry if you want to restrict the use of this
+shipping method to the area you define.
+
+**Weight From, Weight To:** Enter a weight range for orders that can use this
+option.
+
+**Fixed Price:** An entry in this field sets an effective minimum price
+and contributes the fixed component of the shipping cost formula.
+
+**Rate Unit Weight Price:**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Measurement Units [](id=measurement-units)
 
 In order to use product weight to calculate shipping costs, the catalog must
@@ -17,8 +84,12 @@ specify each product's weight (see
 [Configuration](/web/liferay-emporio/documentation/-/knowledge_base/7-1/configuration#shipping)).
 First, however, you may need to create measurement units.
 
+@commerce@ uses a handful of commonly used measurement units--meters,
+millimeters, feet, inches, kilograms, grams, 
+
 If you built your store using a site initializer, measurement units probably
-came prepackaged. However, you may need to make make changes if you 
+came prepackaged. However, you may need to make make changes if you want to
+change the primary unit, or use units are relatively obscure.
 
 
 

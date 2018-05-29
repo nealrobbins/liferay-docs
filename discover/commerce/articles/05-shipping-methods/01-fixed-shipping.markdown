@@ -21,7 +21,7 @@ Follow these steps:
 2.  Click on the ![Add](../../images/icon-add.png) button and fill in the
     following fields:
 
-    **Name:** This is the name that buyers will see when they are prompted to
+    **Name:** this is the name that buyers will see when they are prompted to
     select a shipping option.
 
     **Description:** Information about the method---delivery time, guarantees,
