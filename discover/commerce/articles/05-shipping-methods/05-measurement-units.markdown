@@ -35,10 +35,13 @@ Follow these steps:
     **Ratio to:** If the unit is not primary, enter its ratio to the primary in
     terms of how many of the new unit are equal to one primary. For example, if
     the primary unit is *kilogram* and the new unit is *metric ton*, the ratio
-    should be 0.001.
+    should be 0.001. If the unit is primary, then you'll need to adjust the
+    ratios of your other units (see below).
 
     **Priority:** Priority sets the order in which units will be displayed on
     a page. Lower numbers come first.
+
+3.  Click *Save*.
 
 ## Choosing a Primary Measurement Unit
 
