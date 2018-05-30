@@ -1,4 +1,4 @@
-# Variable Rate Shipping [](id=by-weight-shipping-method)
+# Variable Rate Shipping [](id=variable-rate-shipping)
 
 Variable rate shipping uses a formula to calculate shipping costs on the basis
 of three factors: the order's total weight, it's subtotal (cost before shipping
