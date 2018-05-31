@@ -1,5 +1,94 @@
 # Payment Methods [](id=payment-methods)
 
+@commerce@ offers two payment methods---money order and purchase order---that do
+not require the services of a third-party payment provider. Integration with
+payment providers is also possible, with one---PayPal---ready to go out of the
+box.
+
+## Money Order
+
+While there are obvious downsides to money orders---starting with the time it
+takes to deliver payment through the mail---the payments are widely used in some
+circles, and not necessarily only by low-tech firms. Follow these steps to offer
+customers the option to pay by money order:
+
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click on the
+    *Payment Methods* tab.
+
+2.  Click *Money Order* and fill in the following fields in the form that
+    displays:
+
+    **Name**: Give the payment method a name, or leave it as "Money Order."
+
+    **Description**: Text entered in this field appears on the screen where
+    buyers select a payment method.
+
+    **Image**: Hit *Browse* to upload or select an image to display along with
+    the name and description.
+
+    **Message**: Text entered here will be displayed after the customer chooses
+    the money order option. This text could give instructions on where to send
+    the money order, or provide information on when the product will ship, or
+    the like.
+
+3.  Check the *Active* Box and click *Save*.
+
+## Purchase Order
+
+Using a purchase order involves providing the buyer with an order form, and then
+invoicing her after the form is submitted. Follow these steps to give buyers to
+option to pay by purchase order:
+
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click on the
+    *Payment Methods* tab.
+
+2.  Click *Purchase Order* and fill in the following fields in the form that
+    displays:
+
+    **Name**: Give the payment method a name, or leave it as "Purchase Order."
+
+    **Description**: Text entered in this field appears on the screen where
+    buyers select a payment method.
+
+    **Image**: Hit *Browse* to upload or select an image to display along with
+    the name and description.
+
+    **Message**: Text entered here will be displayed after the customer chooses
+    the purchase order option. On the same page, the buyer will be prompted to
+    enter a Purchase Order Number. Text entered in the message field could
+    provide information such where to find the correct purchase order number,
+    when to expect an invoice, or other like information.
+
+3.  Check the *Active* Box and click *Save*.
+
+
++$$$
+
+**Note:** This process does not create a mechanism for providing buyers with an
+order form or for the buyer to submit that order form back to the seller.
+
+$$$
+
+
+
+
+The checkout process is identical to that for money orders, except that the
+customer will be prompted to enter a Purchase Order Number. Text entered in the
+*Message* field will be displayed on the same page as the prompt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Out of the box, there are five different payment methods available.
 Three--Authorize.net, Worldpay, and Paypal--require the services of a payment
 processing company. The other two--money orders and purchase orders--can be set
@@ -7,8 +96,8 @@ up without involving a third party.
 
 ## Money Order [](id=money-order)
 
-While there are obvious downsides to money orders--starting with the time it
-takes to deliver payment through the mail--the payments are widely used in some
+While there are obvious downsides to money orders---starting with the time it
+takes to deliver payment through the mail---the payments are widely used in some
 circles, and not necessarily only by low-tech firms.
 
 +$$$
