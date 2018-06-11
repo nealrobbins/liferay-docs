@@ -35,4 +35,5 @@ users before they are placed. Follow these steps.
 
 By default, both workflows will seek approval from site administrators. To
 select order managers or other users to approve orders---or to otherwise
-customize the process---see [Workflows]().
+customize the process---see
+[Workflows](/develop/tutorials/-/knowledge_base/7-1/workflow) for more detail.
