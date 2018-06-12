@@ -1,4 +1,4 @@
-# Displaying Product Categories [](id=displaying-product-categories)
+# Displaying Category Pages [](id=displaying-product-categories)
 
 Users have two main options for displaying the contents of a category on a page.
 You can manually create a category display page for each category, or you can
@@ -12,33 +12,68 @@ choose: you can use a default page to set certain standards for appearance and
 consistency, and then override the default with a custom page for any categories
 on which you want to lavish more attention.
 
-Once your categories have pages attached to them, the Category Navigation
-Application can be used to help buyers easily find the products they want.
+Once your categories have pages attached to them, the Category Navigation widget
+can be used to help buyers easily find the products they want.
 
-## Creating Individual Pages [](id=creating-individual-pages)
+## Creating a Default Category Page
 
-Manually creating a category page is easy. Just 
-[create a page][discover/portal/-/knowledge_base/7-1/creating-and-managing-pages] 
-and then go to *Site Menu* &rarr; *Content* &rarr; *Categories*, find the
-category you want to create a page for, and click
-![Options](../../images/icon-add.png) &rarr; *Edit*. Then click on the *Category
-Display Page* tab, hit *Choose* and select the page you just created.
+Follow these steps to create a single generic page to display category content:
 
-## Creating a Default Page [](id=creating-a-default-page)
+1.  [Create a page.][discover/portal/-/knowledge_base/7-1/creating-and-managing-pages] 
 
+2.  Go to *Site Menu* &rarr; *Build* &rarr; *Pages* and click on the
+    ![Options](../../images/icon-options.png) button next to the page you just
+    created. Select *View*.
 
+3.  Add a *Category Content* widget to the page.
 
-# Commerce Category Navigation [](id=commerce-category-navigation)
+The category content widget does two things. First, it identifies the page you
+just created as the default category page. When a link in a *Commerce Category
+Navigation* widget is clicked, the navigation widget will find the first page in
+the site with a category content widget and open that page. Second, the category
+content widget displays the category's
+[image](web/liferay-emporio/documentation/-knowledge_base/7-1/product-categories#images).
 
-The commerce category navigation app presents users with a tree of navigation
-options that matches categories defined by the site. Rather than requiring the
-user to define a separate site for each link, commerce category app requires
-just one page which it will populate with search results appropriate to the
-selected category.
+You can add other content and applications to the page: for instance,
+a *Commerce Search Results* widget will automatically display products from the
+appropriate category when the page is viewed. Related widgets, such as *Option
+Facets* or *Specification Option Facets*, give users the ability to filter those
+search results.
 
-## Laying the Groundwork [](id=laying-the-groundwork)
++$$$
 
-The first thing to do is create a page for for the category navigation portlet
-to access. Once you've created and named a page, add Category Content and Search
-Results portlets to the page. To give customers an opportunity 
+**Note:** The commerce category navigation widget needs to be configured to link
+to the category page. Once the widget is on a page, open it's *Configuration*
+dialog. From the *Vocabulary* drop-down, select the vocabulary that contains
+your product category tree. See
+[Product Categories](web/liferay-emporio/documentation/-/knowledge_base/7-1/product-categories)
+for more detail.
 
+$$$
+
+## Creating an Individual Category Page 
+
+To create a unique page for a single category, follow these steps:
+
+1.  [Create a page.][discover/portal/-/knowledge_base/7-1/creating-and-managing-pages] 
+
+2.  Go to *Site Menu* &rarr; *Categorization* &rarr; *Categories* and find the
+    category you want to create a page for. Then click
+    ![Option](../../images/icon-app-options) &rarr; *Edit* and select the
+    *Category Display Page* tab.
+
+3.  Click *Choose*, select the page you just created, and click *Done*.
+
+4.  Change the *Friendly URL* if you want to be something other than the
+    default.
+
+5.  Click *Save*.
+
+You can put whatever content and applications you want on this page, but unlike
+the generic page it does *not* need a category content widget. When a user
+clicks on a category, the commerce category navigation widget first checks to
+see whether a unique page has been designated for the selected category. If no
+such page has been designated, it then checks for a category content widget.
+
+An individual category page will automatically override the generic page; no
+further action is required than to create the page and assign it to a category.
