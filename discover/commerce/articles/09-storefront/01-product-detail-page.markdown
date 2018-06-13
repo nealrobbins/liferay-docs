@@ -43,7 +43,7 @@ default page if no individual page exists.
 
 Follow these steps to create an individual product page:
 
-1.  [Create a page][discover/portal/-/knowledge_base/7-1/creating-and-managing-pages].
+1.  [Create a page](discover/portal/-/knowledge_base/7-1/creating-and-managing-pages).
 
 2.  Navigate to the catalog and select the product which you want to assign to
     the page. Click the *Configuration* tab and then the *Display Page* sub-tab.
