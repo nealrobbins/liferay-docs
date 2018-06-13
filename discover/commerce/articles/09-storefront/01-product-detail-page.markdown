@@ -12,7 +12,7 @@ populated with the appropriate content when it is opened.
 
 Follow these steps to create a single generic page to display product details:
 
-1.  [Create a page.](discover/portal/-/knowledge_base/7-1/creating-and-managing-pages).
+1.  [Create a page](discover/portal/-/knowledge_base/7-1/creating-and-managing-pages).
 
 2.  Deploy a *Commerce Product Details* widget to the page.
 
