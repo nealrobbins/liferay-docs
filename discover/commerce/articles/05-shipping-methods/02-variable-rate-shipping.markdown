@@ -1,13 +1,13 @@
 # Variable Rate Shipping [](id=variable-rate-shipping)
 
 Variable rate shipping uses a formula to calculate shipping costs on the basis
-of three factors: the order's total weight, it's subtotal (cost before shipping
+of three factors: the order's total weight, its subtotal (cost before shipping
 and taxes), and any fixed price you choose to impose. To what degree each factor
 is weighted---if at all---is up to you.
 
 You can create multiple different shipping options with variable rates. For
-example, you might create "Standard Ground" option with a relatively low cost
-per unit of weight, as well as "Two-Day Air" option that calculates costs in the
+example, you might create a "Standard Ground" option with a relatively low cost
+per unit of weight, as well as a "Two-Day Air" option that calculates costs in the
 same way but results in a higher price.
 
 ## Creating a Variable Rate Shipping Option
@@ -25,7 +25,7 @@ Follow these steps:
 2.  Click the ![Add](../../images/icon-add.png) button and fill in the
     following fields:
 
-    **Name:** this is the name that buyers will see when they are prompted to
+    **Name:** This is the name that buyers will see when they are prompted to
     select a shipping option.
 
     **Description:** Information about the option---delivery time, guarantees,
