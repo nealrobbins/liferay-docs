@@ -43,7 +43,7 @@ search results.
 +$$$
 
 **Note:** The commerce category navigation widget needs to be configured to link
-to the category page. Once the widget is on a page, open it's *Configuration*
+to the category page. Once the widget is on a page, open its *Configuration*
 dialog. From the *Vocabulary* drop-down, select the vocabulary that contains
 your product category tree. See
 [Product Categories](web/liferay-emporio/documentation/-/knowledge_base/7-1/product-categories)
