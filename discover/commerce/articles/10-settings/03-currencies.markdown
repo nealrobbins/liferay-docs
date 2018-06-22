@@ -43,7 +43,7 @@ where it appears---lower numbers come first.
 
 You can choose to allow buyers to purchase products using currencies other than
 your store's primary (see [Price
-Lists](web/liferay-emporio/documentation/-/knowledge_base/7-1/price-lists)).
+Lists](/web/liferay-emporio/documentation/-/knowledge_base/1-0/price-lists)).
 When you do, @commerce@ can retrieve exchange rates and convert prices
 accordingly.
 

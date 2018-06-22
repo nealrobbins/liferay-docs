@@ -72,8 +72,8 @@ option to pay by purchase order:
 
 **Note:** This process does not create a mechanism for providing buyers with an
 order form or for the buyer to submit that order form back to the seller. See
-[Forms](discover/portal/-/knowledge_base/7-0/basic-forms) and 
-[Customer Portal](web/liferay-emporio/documentation/-/knowledge_base/7-1/customer-portal)
+[Forms](/discover/portal/-/knowledge_base/7-0/basic-forms) and 
+[Customer Portal](/web/liferay-emporio/documentation/-/knowledge_base/1-0/customer-portal)
 for more on the submission of forms back and forth.
 
 $$$

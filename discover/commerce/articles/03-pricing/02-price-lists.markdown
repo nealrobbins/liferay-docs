@@ -62,7 +62,7 @@ products to it. Follow these steps:
 There are two ways to add entries to a price list. Besides using the
 method just described, you can also add a product from the SKU tab in its
 catalog entry (see
-[SKUs](web/liferay-emporio/documentation/-/knowledge_base/7-1/adding-options-to-productsl#price-lists)).
+[SKUs](web/liferay-emporio/documentation/-/knowledge_base/7-1/skus#price-lists)).
 In general, the method described on this page is more efficient for adding
 a large number of products to a new list. When creating a new product, however,
 it is usually easier to add it to existing price lists from the Catalog's SKU

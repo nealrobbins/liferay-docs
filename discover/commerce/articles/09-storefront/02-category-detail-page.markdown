@@ -19,7 +19,7 @@ can be used to help buyers easily find the products they want.
 
 Follow these steps to create a single generic page to display category content:
 
-1.  [Create a page.][discover/portal/-/knowledge_base/7-1/creating-and-managing-pages] 
+1.  [Create a page](discover/portal/-/knowledge_base/7-1/creating-and-managing-pages). 
 
 2.  Go to *Site Menu* &rarr; *Build* &rarr; *Pages* and click on the
     ![Options](../../images/icon-options.png) button next to the page you just
@@ -32,7 +32,7 @@ just created as the default category page. When a link in a *Commerce Category
 Navigation* widget is clicked, the navigation widget will find the first page in
 the site with a category content widget and open that page. Second, the category
 content widget displays the category's
-[image](web/liferay-emporio/documentation/-knowledge_base/7-1/product-categories#images).
+[image](/web/liferay-emporio/documentation/-/knowledge_base/1-0/product-categories#images).
 
 You can add other content and applications to the page: for instance,
 a *Commerce Search Results* widget will automatically display products from the
@@ -46,7 +46,7 @@ search results.
 to the category page. Once the widget is on a page, open its *Configuration*
 dialog. From the *Vocabulary* drop-down, select the vocabulary that contains
 your product category tree. See
-[Product Categories](web/liferay-emporio/documentation/-/knowledge_base/7-1/product-categories)
+[Product Categories](/web/liferay-emporio/documentation/-/knowledge_base/1-0/product-categories)
 for more detail.
 
 $$$
@@ -55,7 +55,7 @@ $$$
 
 To create a unique page for a single category, follow these steps:
 
-1.  [Create a page.][discover/portal/-/knowledge_base/7-1/creating-and-managing-pages] 
+1.  [Create a page](/discover/portal/-/knowledge_base/7-1/creating-and-managing-pages).
 
 2.  Go to *Site Menu* &rarr; *Categorization* &rarr; *Categories* and find the
     category you want to create a page for. Then click

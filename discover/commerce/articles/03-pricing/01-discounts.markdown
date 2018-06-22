@@ -4,7 +4,7 @@ A discount applies a modifier to a product's base price. It can be expressed as
 either an absolute number or as a percentage, and can be applied to either
 a limited number of products or to the entire catalog. It can be available
 either to all buyers or to a defined 
-[user segment](web/liferay-emporio/documentation/-/knowledge_base/7-1/user-segmentation),
+[user segment](web/liferay-emporio/documentation/-/knowledge_base/1-0/user-segmentation),
 or to an even more narrowly defined group of customers that meet certain
 qualifications. Unlike a price list, a discount always reduces the base price
 and never increases it.

@@ -23,7 +23,7 @@ received:
     **User Segments:** Click **Select** and choose segments from the list to
     determine which users will receive notifications. If no segment is selected,
     then all users will receive notifications. See 
-    [User Segments](web/liferay-emporio/documentation/-/knowledge_base/7-1/user-segments)
+    [User Segments](/web/liferay-emporio/documentation/-/knowledge_base/1-0/user-segments)
     for more detail.
 
     **From Address:** Enter the email address that will appear in the

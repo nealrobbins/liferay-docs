@@ -15,7 +15,7 @@ has as its parent your store site's organization.
 
 Your store site's organization was created automatically when you created the
 site using the Beryl site initializer (see [Customer
-Portal](/web/liferay-emporio/documentation/-/knowledge_base/7-1/customer-portal)).
+Portal](/web/liferay-emporio/documentation/-/knowledge_base/1-0/customer-portal)).
 To set up a new account, follow these steps:
 
 1.  Go to *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*. Click
@@ -85,8 +85,8 @@ Keep in mind that all three of these roles are meant to be occupied by
 account management.
 
 Site Administrators can assign these roles to users just as they would any other
-organization role (see [Managing
-Roles](/discover/portal/-/knowledge_base/7_1/managing-roles). However, you can
+organization role (see 
+[Managing Roles](/discover/portal/-/knowledge_base/7_1/managing-roles). However, you can
 also allow your customer's account managers to take care of this job. An account
 manager cannot add new users to your system, but she can add existing users to
 her account and assign permissions to them.

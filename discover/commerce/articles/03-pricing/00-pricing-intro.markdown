@@ -1,7 +1,7 @@
 # Pricing [](id=pricing)
 
 On its most basic level, pricing is handled in the catalog (see
-[SKUs](web/liferay-emporio/documentation/-/knowledge_base/7-1/adding-options-to-products#pricing)).
+[SKUs](/web/liferay-emporio/documentation/-/knowledge_base/1-0/skus#pricing)).
 When all you want to do is assign one price to one SKU, that's all you need. But
 if you want to do something a little more sophisticated, *discounts* and *price
 lists* are useful.

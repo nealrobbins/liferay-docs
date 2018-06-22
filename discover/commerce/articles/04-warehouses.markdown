@@ -3,7 +3,7 @@
 Initially, inventory levels for all of your products have to be entered
 manually. From then on, inventory levels will be tracked automatically as orders
 are filled. To set a product's inventory level, see
-[SKUs](/web/liferay-emporio/documentation/-/knowledge_base/7.1/shipping-methods).
+[SKUs](/web/liferay-emporio/documentation/-/knowledge_base/1.0/skus#inventory).
 First, however, you must have your warehouses in order.
 
 ## Using a Single Warehouse
@@ -11,7 +11,7 @@ First, however, you must have your warehouses in order.
 If you are operating with only one warehouse, there is no need to geocode its
 location or enter exact coordinates. However, if you integrate your system with
 a shipping company's (see 
-[Shipping Methods](web/liferay-emporio/documentation/-/knowledge_base/7-1/shipping-methods)
+[Shipping Methods](/web/liferay-emporio/documentation/-/knowledge_base/1-0/shipping-methods)
 for details), you will need to enter your warehouse's address to calculate
 shipping costs.
 
@@ -21,7 +21,7 @@ Before you can enter the address for a warehouse, you may need to enter and
 activate the applicable country and region (state or province) at the
 *Countries* tab at *Site Menu* &rarr; *Commerce* &rarr; *Settings*. For more
 detail see
-[Settings](web/liferay-emporio/documentation/-knowledge_base/7-1/settings#countries).
+[Settings](/web/liferay-emporio/documentation/-knowledge_base/1-0/countries).
 
 $$$
 
@@ -69,7 +69,7 @@ The default solution is integration with Microsoft's Bing Maps, which Microsoft
 makes available free of charge---though this depends on use case and volume. At
 the time of this writing, instructions on obtaining a Bing API key were
 published at 
-[Microsoft Developer Network][https://msdn.microsoft.com/en-us/library/ff428642.aspx].
+[Microsoft Developer Network](https://msdn.microsoft.com/en-us/library/ff428642.aspx).
 
 Once you have an API key, follow these steps to set products to ship from the
 closest available warehouse:

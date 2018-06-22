@@ -1,8 +1,8 @@
 # User Segmentation [](id=user-segmentation)
 
-User Segmentation allows you to organize users, primarily customers, into
-groups. This allows price lists, discounts, and other features to be precisely
-targeted to appropriate segments.
+User Segmentation allows you to organize users into groups. This allows price
+lists, discounts, and other features to be precisely targeted to appropriate
+segments.
 
 Segments can be defined in a variety of ways. You can select users individually,
 by role, or select whole organizations or user groups to include. You are not
