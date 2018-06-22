@@ -64,7 +64,8 @@ add users:
 Note: When you create a user segment with more than one criteria, the criteria
 are combined inclusively. For example, if you make a user segment including
 members of the organization "Procurement" in addition to the user group
-"Purchasing Managers", the resulting segment would every user who is a member of
-*either* group. It would not be limited to users who are members of *both*.
+"Purchasing Managers", the resulting segment would include every user who is
+a member of *either* group. It would not be limited to users who are members of
+*both*.
 
 $$$
