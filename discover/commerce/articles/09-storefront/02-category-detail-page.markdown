@@ -1,4 +1,4 @@
-# Displaying Category Pages [](id=displaying-product-categories)
+# Displaying Category Pages [](id=displaying-category-pages)
 
 Users have two main options for displaying the contents of a category on a page.
 You can manually create a category display page for each category, or you can
@@ -19,7 +19,7 @@ can be used to help buyers easily find the products they want.
 
 Follow these steps to create a single generic page to display category content:
 
-1.  [Create a page](discover/portal/-/knowledge_base/7-1/creating-and-managing-pages). 
+1.  [Create a page](/discover/portal/-/knowledge_base/7-1/creating-and-managing-pages). 
 
 2.  Go to *Site Menu* &rarr; *Build* &rarr; *Pages* and click on the
     ![Options](../../images/icon-options.png) button next to the page you just
