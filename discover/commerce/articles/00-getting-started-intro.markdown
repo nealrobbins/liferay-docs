@@ -19,8 +19,7 @@ a wide range of product data---product variations, pricing, images,
 specifications---and makes it readily available to the store's customer-facing
 pages.
 
-![Figure 1: The catalog stores inventory levels, category assignments, and other
-product information.](../images/catalog.png)
+![Figure 1: The catalog stores inventory levels, category assignments, and other product information.](../images/catalog.png)
 
 Those customer-facing pages can be constructed with the methods that have
 already been proven by long-time users of @product@. Setting up a 
@@ -31,8 +30,7 @@ specifically for surfing the contents of the catalog, while customizable
 widgets make it easy to add common UI elements---such as *Checkout* and *View
 Cart*---to a page.
 
-![Figure 2: Product pages are ready to go out-of-the-box, but can be customized
-extensively.](../images/product-detail.png)
+![Figure 2: Product pages are ready to go out-of-the-box, but can be customized extensively.](../images/product-detail.png)
 
 @commerce@ is optimized for business-to-business transactions, with an eye
 toward making B2B more user-friendly than it sometimes tends to be. 
@@ -59,6 +57,8 @@ multiple currencies. Meanwhile
 [payments](/web/liferay-emporio/documentation/-/knowledge_base/1-0/payment-methods)
 can be handled through integration with a third-party payment processor, through
 a service such as Paypal, or completely in-house.
+
+![Figure 3: Any number of different payment methods can be added.](../images/payment-methods.png)
 
 Products can be shipped by any number of different
 [methods](/web/liferay-emporio/documentation/-/knowledge_base/1-0/shipping-methods):
