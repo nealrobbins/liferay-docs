@@ -19,6 +19,9 @@ a wide range of product data---product variations, pricing, images,
 specifications---and makes it readily available to the store's customer-facing
 pages.
 
+![Figure 1: The catalog stores inventory levels, category assignments, and other
+product information.](../images/catalog.png)
+
 Those customer-facing pages can be constructed with the methods that have
 already been proven by long-time users of @product@. Setting up a 
 [storefront](/web/liferay-emporio/documentation/-/knowledge_base/1-0/setting-up-a-storefront)
@@ -27,6 +30,9 @@ specifically for the purpose. New search tools, for instance, are geared
 specifically for surfing the contents of the catalog, while customizable
 widgets make it easy to add common UI elements---such as *Checkout* and *View
 Cart*---to a page.
+
+![Figure 2: Product pages are ready to go out-of-the-box, but can be customized
+extensively.](../images/product-detail.png)
 
 @commerce@ is optimized for business-to-business transactions, with an eye
 toward making B2B more user-friendly than it sometimes tends to be. 
@@ -76,8 +82,8 @@ a site initializer is an easy way to see what commerce can do, and can be used
 to get a head start on a live store: modify the theme to suit your purposes,
 replace the dummy catalog with your own data, and you're well on your way.
 
-@commerce@ ships with one site initializer, called Beryl. It includes a theme,
-a complete user interface oriented towards B2B selling, and a catalog populated
-with sample products. See
-[Customer Portal](/web/liferay-emporio/documentation/-/knowledge_base/1-0/customer-portal)
+At the time of this writing, @commerce@ ships with one site initializer, called
+Beryl. It includes a theme, a complete user interface oriented towards B2B
+selling, and a catalog populated with sample products. See [Customer
+Portal](/web/liferay-emporio/documentation/-/knowledge_base/1-0/customer-portal)
 for for information.
