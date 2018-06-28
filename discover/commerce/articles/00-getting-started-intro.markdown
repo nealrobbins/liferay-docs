@@ -70,7 +70,7 @@ accordingly.
 
 The quickest way to get going with @commerce@ is to use a site initializer.
 A site initializer is a type of 
-[site templates]( /discover/portal/-/knowledge_base/7-1/building-sites-from-templates)
+[site template]( /discover/portal/-/knowledge_base/7-1/building-sites-from-templates)
 that does much of the initial work of setting up a store. Creating a site with
 a site initializer is an easy way to see what commerce can do, and can be used
 to get a head start on a live store: modify the theme to suit your purposes,
