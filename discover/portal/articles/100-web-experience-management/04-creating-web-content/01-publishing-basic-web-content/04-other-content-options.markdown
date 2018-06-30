@@ -1,14 +1,13 @@
 # Other Content Options [](id=other-content-options)
 
-Publishing content won't always be a neat and simply process. Here are some 
-important options and tools that you can use to enhance your content and user
-experience.
+Publishing content won't always be a simple process. Here are some options and
+tools that you can use to enhance your content and user experience.
 
 ## Localizing Content [](id=localizing-content)
 
-When you create a new piece of web content, you have the ability to choose a
-default language. First, you'll need to change the system configuration to 
-enable the option to change the default language.
+When you create a new piece of web content, you can choose a default language.
+First, you'll need to change the system configuration to enable the option to
+change the default language.
 
 1.  Go to the *Control Panel* &rarr; *System Settings*. 
 
@@ -17,7 +16,7 @@ enable the option to change the default language.
 
 3.  Check the box labeled *Changeable Default Language*.
 
-4.  *Save* your configuration.
+4.  Click *Save*.
 
 You now need to add translations for any languages you need. Adding 
 translations works like this:
@@ -33,8 +32,7 @@ When you select a language, all of the fields in the article will switch to the
 new language. To create the new translation, fill in the fields in the selected 
 language and publish the article. 
 
-![Figure 1: Adding a translation to an 
-article.](../../../../images/web-content-translation.png)
+![Figure 1: Adding a translation to an article.](../../../../images/web-content-translation.png)
 
 You can modify the language translation list by inserting `locales.enabled=`
 followed by your preferred languages in your `portal-ext.properties` file. For
@@ -48,7 +46,7 @@ URL), but do not have the necessary translations for localizable fields, your
 site's language values will be used from the old default language. Therefore,
 you should change the default language of your site *only* when you have
 translated values for all localizable entities. Otherwise, you may not be in
-control of what language is displayed in your Liferay instance.
+control of what language is displayed.
 
 $$$
 
@@ -68,7 +66,7 @@ site. To enable Xuggler:
 
 1.  Navigate to the *Control Panel*.
 
-2.  click on *Configuration* &rarr; *Server Administration* &rarr; *External Services*.
+2.  Click on *Configuration* &rarr; *Server Administration* &rarr; *External Services*.
 
 3.  Scroll to the bottom and click *Install* in the *Xuggler* section.
 
@@ -84,9 +82,12 @@ file in a web content article the same way you added images previously.
 
 ## XML Format Downloads [](id=xml-format-downloads)
 
-@product@ provides tools like the [Resource Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-your-themes) and Site Initiators which can be deployed to build a site almost 
-instantly. To import Web Content like this, you need to have it individually
-exported in XML format. To export the content:
+Tools like the 
+[Resource
+Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-your-themes)
+and Site Initiators can be deployed to build a site almost instantly. Before you
+can use them to import Web Content, however, you first need to have the content
+exported individually in XML format. To export the content:
 
 1.  Go to *Site Administration* &rarr; *Content* &rarr; *Web Content*
 
@@ -102,7 +103,8 @@ save into an XML file locally.
 
 ## Subscribing to Content [](id=subscribing-to-content)
 
-An administrator or web content writer can subscribe to an article or folder to follow changes being made to it. To do this:
+An administrator or web content writer can subscribe to an article or folder to
+follow changes being made to it. To do this:
 
 1.  Go to *Content* &rarr; *Web Content* for your Site.
 
@@ -113,7 +115,7 @@ An administrator or web content writer can subscribe to an article or folder to 
 Anytime an asset that you follow is modified, you'll receive an email notifying 
 you of the change.
 
-![Figure 4: Click the Subscribe icon in the web content entity's *Information* menu to begin receiving web content notifications.](../../../../images/web-content-subscribe.png)
+![Figure 4: Click the Subscribe icon in the web content entity's *Options* menu to begin receiving web content notifications.](../../../../images/web-content-subscribe.png)
 
 That's pretty much all there is to basic content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
