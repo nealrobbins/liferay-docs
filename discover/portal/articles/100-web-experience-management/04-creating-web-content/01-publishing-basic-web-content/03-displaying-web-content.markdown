@@ -14,7 +14,6 @@ display it.
 3.  Find the *Web Content Display* and add it to the page.
 
 ![Figure 1: Add the Web Content Display app to a page to begin displaying your new web content article.](../../../../images/add-web-content-display.png)
-
 You can drag a widget to the position on the page where you want your content 
 to appear. You can have as many Web Content Display widgets on a page as you 
 need, which gives you the power to lay out your content exactly the way you 
@@ -32,9 +31,10 @@ Now, select the content to display:
     the content by title, description, user name, or site (click the dropdown 
     arrow to see all the options).
 
-Once you select the web content article, you can to choose the User Tools and 
-Content Metadata to be published in the Web Content Display app. These
-two entities have the following options to choose from, by default:
+Selecting a web content article displays the Web Content Display's
+configuration page, where you can choose the User Tools and Content Metadata to
+be published in the widget. These two entities have the following options to
+choose from, by default:
 
 - **User Tools**
     - *Translations*
@@ -45,23 +45,25 @@ two entities have the following options to choose from, by default:
     - *Comments*
     - *Comment Ratings*
 
+If you have enabled OpenOffice/LibreOffice integration, you can also enable
+document conversion for your content. This gives users the ability to
+download your content in their format of choice. To enable OpenOffice
+integration, go to *Control Panel* &rarr; *Configuration* &rarr; *System
+Settings* &rarr; *Connectors* and check the *Server Enabled* box. Back in the
+Web Content Display's configuration page, conversion options are available
+under the *User Tools* list.
+
+![Figure 2: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../../../images/web-content-choosing-web-content.png)
 **Translations** shows the available locales for your content. If you're working 
 on the page for a particular language, you can select the translation of your 
 content that goes with your locale.
 
-![Figure 2: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../../../images/web-content-choosing-web-content.png)
+**Print** opens the content in a separate browser window with just the
+content---no navigation or other widgets.
 
-If you have enabled OpenOffice.org integration with your Liferay instance, you
-can also enable document conversion for your content. This gives your users the
-ability to download your content in their format of choice. Conversion options 
-are available under the *User Tools* list.
-
-**Print** pops the content up in a separate browser window with
-just the content, and no navigation or other widgets.
-
-**Ratings** shows one of two ratings interfaces @product@ has: five stars or 
-thumbs up and thumbs down. Rating types are configured in *Configuration* 
-&rarr; *Site Settings*.
+**Ratings** shows one of two ratings interfaces @product@ has: five stars or
+thumbs up and thumbs down. Rating types are configured in *Site Menu* &rarr;
+*Configuration* &rarr; *Site Settings*.
 
 **Comments** creates a discussion forum attached to your content.
 
@@ -75,15 +77,15 @@ If you'd like to allow guests to comment on your web content article:
 3.  From the left menu, select *Site Administration* &rarr; *Content* &rarr; 
     *Web Content*.
 
-4.  The navigate down to the Web Content Article heading and select the *Add 
-    Discussion* checkbox.
+4.  Navigate down to the Web Content Article heading and select the *Add 
+    Discussion* checkbox. Click *Save*.
 
 Guests are now able to post comments on your web content article!
 
 You may decide you want one, some, or none of these features, which is why
 they're all implemented as simple selector buttons to be enabled or disabled at
 need. Once you've selected the features you want to include in your Web Content
-Display spp, click the *Save* and close the configuration window.
+Display widget, click *Save* and close the configuration window.
 
 ## Editing Published Content [](id=editing-published-content)
 
@@ -92,28 +94,26 @@ Content Display app or from Site Administration. To edit it from
 the Web Content Display app:
 
 1.  Select the *Options* button 
-    (![Options](../../../../images/icon-app-options.png)) from the app's top 
+    (![Options](../../../../images/icon-app-options.png)) from the widget's top 
     panel.
 
-2.  Select the appropriate edit action.
-    
-    For example, selecting *Edit Web Content* launches the editor. 
-    *Edit Template* launches the template editor for the web content article's 
-    template.
+2.  Select *Edit Web Content* to launch the editor. Select *Edit Template* to
+    launch the template editor for the web content article's template.
 
 ![Figure 3: You can select and edit an article, or edit its template directly from the Web Content Display app.](../../../../images/web-content-display-icons.png)
 
-If you edit the article from Site Administration, you can also view the article's evolution.
+If you edit the article from Site Administration, you can also view the
+article's history, and use the diff tool to compare versions.
 
 1.  Go to *Content* &rarr; *Web Content* from the Menu.
 
 2.  Next to the article, click *Actions* icon 
     (![Actions](../../../../images/icon-actions.png)) and select *View
-    History*.
-    
-    From this menu, you can view all the article's versions and 
-    modified/display dates. The Diff tool lets you compare versions of the 
-    article and highlight the differences between the two.
+    History*. This shows you 
+
+This shows you all the article's versions and modified/display dates. The diff
+tool lets you compare these versions and highlight the differences between
+them.
 
 1.  Click *Actions* next to a version of the article you'd like to compare. 
 
@@ -124,9 +124,8 @@ If you edit the article from Site Administration, you can also view the article'
     The tool provides color coded highlighting to emphasize additions and deletions between the two articles.
 
 ![Figure 4: Comparing web content articles is a great feature to use during the Workflow process.](../../../../images/web-content-diff-feature.png)
-
-When you publish updates to a web content article that's already being displayed
-the content is immediately updated unless you have a workflow enabled, which is discussed in greater detail in
-[Using Workflow](/discover/portal/-/knowledge_base/7-1/using-workflow).
-It makes no difference whether you edit it from a Web Content Display app, from
-the Asset Publisher, or from the Site Administration interface.
+Whenever you publish updates to a web content article that's already being
+displayed, the content is immediately updated unless you have a workflow
+enabled (See 
+[Using Workflow](/discover/portal/-/knowledge_base/7-1/using-workflow)
+for details).

@@ -1,6 +1,6 @@
 # Other Content Options [](id=other-content-options)
 
-Publishing content won't always be a simple process. Here are some 
+Publishing content won't always be a neat and simply process. Here are some 
 important options and tools that you can use to enhance your content and user
 experience.
 
