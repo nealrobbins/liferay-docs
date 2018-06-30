@@ -1,10 +1,7 @@
 # Publishing Basic Web Content [](id=publishing-basic-web-content)
 
-To start working with Web Content, you'll examine some basic concepts involving 
-Sites and pages.
+Web Content is one of many different kinds of assets, along with blog posts, wiki articles, message board posts, and other kinds of content. Like all of these assets, @product@ handles Web Content using a general asset framework that includes categories, tags, comments, ratings and more. Please see 
+[Publishing Content Dynamically](/discover/portal/-/knowledge_base/7-1/publishing-content-dynamically)
+for more information on Liferay's asset framework.
 
-You'll start with an overview of WCM features, and then look deeper at each 
-feature. Note that web content is just one kind of asset on Liferay. Other types of content (blog posts, wiki articles, message board posts, etc.) are also considered assets. @product@ provides a general framework for
-handling assets that includes tags, categories, comments, ratings, and more.
-Please see the [Publishing Content Dynamically](/discover/portal/-/knowledge_base/7-1/publishing-content-dynamically)
-section for more information on Liferay's asset framework.
+To start working with Web Content, you'll begin by publishing some basic material using Web Content Management's WYSIWYG editor. You'll then cover the editor's features in greater depth, and learn the details of publishing the content you create to a page.
