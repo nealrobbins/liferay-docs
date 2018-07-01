@@ -17,7 +17,7 @@ Let's do this now.
     (![Configuration](../../../../../images/icon-wrench.png)).
 
 3.  Change the *Field Label* value to *Instructions* and the *Name* value 
-    (variable name) to `steps`. Now your template writer has a variable by 
+    to *steps*. Now your template writer has a variable by 
     which he or she can refer to this field.
 
 Here's a list of all the configurable settings available for a structure's
@@ -36,10 +36,9 @@ users must enter a value for it in order to submit content using this structure.
 
 **Name:** The name of the field internally, automatically generated. Since this
 is the variable name that you can read the data from in a template, you should
-give a more memorable name here.
+enter a descriptive name.
 
-**Predefined Value:** Specifying predefined values for structure forms is a way
-to specify defaults. When a user creates a new web content article based on a
+**Predefined Value:** When a user creates a new web content article based on a
 structure that has predefined values for various fields, the predefined values
 appear in the form as defaults for those fields.
 
@@ -47,9 +46,9 @@ appear in the form as defaults for those fields.
 displays helpful information. If you would like to provide text for the tooltip
 you may enter it here.
 
-**Indexable:** Select *Yes* to enable @product@ to index your field for search.
+**Indexable:** Select *Yes* to permit your field to be indexed for search.
 
-**Localizable:** Select *Yes* to enable @product@ to localize your field.
+**Localizable:** Select *Yes* to permit localization for this field.
 
 **Repeatable:** Select *Yes* to make your field repeatable. Your users can then
 add as many copies of this field as they like. For example, if you're creating a
@@ -57,11 +56,11 @@ structure for articles, you might want a repeatable Author field in case you
 have multiple authors for a particular article.
 
 **Multiple:** Select *Yes* to enable a multi-selection list (only available for
-Select).
+the Select field).
 
 **Options:** Changes the options available for selection. You're able to add and
 remove options as well as edit each individual option's display name and value
-(only available for Radio and Select).
+(only available for Radio and Select fields).
 
 **Style:** Changes the line separator's style (only available for Separator).
 
@@ -70,7 +69,7 @@ remove options as well as edit each individual option's display name and value
 Structure Default Values let you create one structure that uses common data from
 multiple articles.
 
-Returning to the newspaper scenario again, assume you want all sports articles
+Returning to the newspaper scenario again, suppose you want all sports articles
 to have the same display page (sports page), the same categories, or the same
 set of tags. Instead of adding them for each article or wondering if your users
 are adding them to every web content article, you can add these characteristics
@@ -80,15 +79,16 @@ you have an existing structure.
 
 To edit a structure's default values:
 
-1.  Go to *Web Content* in the Content section of Site Administration and click 
-    the *Options* icon (![Options](../../../../../images/icon-options.png)) &rarr; 
-    *Structures* to see the structures list.
-    
+1.  Go to *Site Administration* &rarr; *Content* &rarr; *Web Content* and click
+    on the *Structures* tab to see the structures list.
+
 2.  Find the *Actions* button (![Actions](../../../../../images/icon-actions.png)) 
     for the desired structure and select *Edit Default Values* from the menu to 
     view a window like the one below.
 
-    This form allows you to manage the structure settings.
+    This form allows you to manage the structure settings. It duplicates the
+    function of the *Predefined Value* field setting (see above), but is much
+    more convenient for setting or editing a large number of defaults at once.
 
 ![Figure 1: You can edit default values via the *Actions* button of the Manage Structures interface.](../../../../../images/structure-actions.png)
 

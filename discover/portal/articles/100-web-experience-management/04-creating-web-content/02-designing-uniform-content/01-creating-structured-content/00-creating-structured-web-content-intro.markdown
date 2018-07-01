@@ -15,20 +15,19 @@ come in from your writers manually set to light blue, you need to spend time
 reformatting them before they are published.
 
 Structures give you the ability to provide a format for your content so your
-writers know what needs to be entered to have a complete article. Using
-structures, you can provide a form for your users which spells out exactly what
-is required and can be formatted automatically using a template.
+writers know exactly what a complete article needs. Using structures, you can
+provide a form for your users which spells out exactly what is required and can
+be formatted automatically using a template.
 
 You create a structure by adding form controls such as text fields, text boxes,
-text areas (HTML), check boxes, select boxes and multi-selection lists. Also,
-you can add specialized, Liferay-specific application fields such as an Image
-Uploader and Documents and Media right onto the structure. Furthermore, you can
-move the elements around by dragging them where you want them. This makes it
-easy for you to prototype different orders for your input fields. Additionally,
-elements can be grouped together into blocks which can then be repeatable.
-Template writers can then write a template which loops through these blocks and
-presents your content in innovative ways, such as in sliding navigation bars,
-content which scrolls with the user, and more.
+HTML text areas, check boxes, select boxes and multi-selection lists. You can
+add specialized application fields such as an Image Uploader or Documents and
+Media right onto the structure. Positioning elements is accomplished by
+drag-and-drop, making it easy for you to prototype different orders for your
+input fields. Additionally, elements can be grouped together into blocks which
+can then be repeatable. Template writers can then write a template which loops
+through these blocks and presents your content in innovative ways, such as in
+sliding navigation bars, content which scrolls with the user, and more.
 
 Next you'll take a look at how you can create and edit structures through the
 Manage Structures interface.
