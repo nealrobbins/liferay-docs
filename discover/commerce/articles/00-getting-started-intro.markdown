@@ -1,13 +1,6 @@
 # Getting Started with @commerce@ [](id=getting-started)
 
-@commerce@ is a digital commerce platform for midmarket enterprises. While
-highly customizable, it is not just a collection of tools for hacking together
-your own custom commerce system (though it could certainly be used for that).
-@commerce@ is a full-service commerce solution that offers out-of-the-box
-functionality.
-
-@commerce@ is built on top of @product@, and as such is integrated with
-@product@'s content and user management systems. Any website built with
+@commerce@ is a digital commerce platform built from the ground up to work with Liferay DXP, making it easy to leverage a fully integrated content management system and best-in-breed portal capabilities in commerce websites.Any website built with
 @product-ver@ can be integrated seamlessly with a store built with @commerce@.
 
 ## Overview
@@ -21,19 +14,15 @@ pages.
 
 ![Figure 1: The catalog stores inventory levels, category assignments, and other product information.](../images/catalog.png)
 
-Those customer-facing pages can be constructed with the methods that have
-already been proven by long-time users of @product@. Setting up a 
-[storefront](/web/liferay-emporio/documentation/-/knowledge_base/1-0/setting-up-a-storefront)
-is facilitated by a wide range of tools that @commerce@ provides
-specifically for the purpose. New search tools, for instance, are geared
-specifically for surfing the contents of the catalog, while customizable
+@commerce@ includes a wide range of tools for setting up a 
+[storefront](/web/liferay-emporio/documentation/-/knowledge_base/1-0/setting-up-a-storefront). New search tools, for instance, are geared
+specifically for browsing product catalogs, while customizable
 widgets make it easy to add common UI elements---such as *Checkout* and *View
 Cart*---to a page.
 
 ![Figure 2: Product pages are ready to go out-of-the-box, but can be customized extensively.](../images/product-detail.png)
 
-@commerce@ is optimized for business-to-business transactions, with an eye
-toward making B2B more user-friendly than it sometimes tends to be. 
+@commerce@ is optimized for business-to-business (B2B) transactions, combining modern site experiences with features that address B2B needs. 
 [Customer Portal](/web/liferay-emporio/documentation/-/knowledge_base/1-0/customer-portal)
 is designed to serve the needs of buyers who have an approval process to observe
 before making purchases. When a buyer places an order, @commerce@ can send an
@@ -50,17 +39,15 @@ to certain customers. This functionality is available to stores that do not use
 the customer portal model as well as those that do.
 
 [Pricing](/web/liferay-emporio/documentation/-/knowledge_base/1-0/pricing) and
-[Tax](/web/liferay-emporio/documentation/-/knowledge_base/1-0/taxes) features
-allow almost unlimited flexibility, allowing almost any kind of discount
-imaginable to be applied and permitting transactions in any currency, or in
-multiple currencies. Meanwhile
+[Tax](/web/liferay-emporio/documentation/-/knowledge_base/1-0/taxes) management features
+allow almost unlimited flexibility, with support for almost any kind of discount
+and multicurrency transactions. Meanwhile, 
 [payments](/web/liferay-emporio/documentation/-/knowledge_base/1-0/payment-methods)
-can be handled through integration with a third-party payment processor, through
-a service such as Paypal, or completely in-house.
+can be handled through integration with a third-party payment processor such as PayPal.
 
 ![Figure 3: Any number of different payment methods can be added.](../images/payment-methods.png)
 
-Products can be shipped by any number of different
+Products can be shipped by a number of different
 [methods](/web/liferay-emporio/documentation/-/knowledge_base/1-0/shipping-methods):
 sellers can impose a flat rate, calculate costs on the basis of weight, or
 integrate their systems closely with the rates of a shipping service, allowing
@@ -78,7 +65,7 @@ The quickest way to get going with @commerce@ is to use a site initializer.
 A site initializer is a type of 
 [site template]( /discover/portal/-/knowledge_base/7-1/building-sites-from-templates)
 that does much of the initial work of setting up a store. Creating a site with
-a site initializer is an easy way to see what commerce can do, and can be used
+a site initializer is an easy way to see what Liferay Commerce can do, and can be used
 to get a head start on a live store: modify the theme to suit your purposes,
 replace the dummy catalog with your own data, and you're well on your way.
 
