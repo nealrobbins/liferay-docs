@@ -3,7 +3,7 @@
 @commerce@ is a digital commerce platform built from the ground up to work with Liferay DXP, making it easy to leverage a fully integrated content management system and best-in-breed portal capabilities in commerce websites.Any website built with
 @product-ver@ can be integrated seamlessly with a store built with @commerce@.
 
-## Overview
+## Overview [](id=overview)
 
 @commerce@ is equipped with a 
 [catalog management](/web/liferay-emporio/documentation/-/knowledge_base/1-0/catalog-management)
@@ -32,6 +32,7 @@ the ability to manage their own accounts, allowing them to designate their own
 buyers, order managers, and account managers.
 
 In addition, @commerce@ features a user control system that is integrated with
+
 @product@'s roles and permissions functionality. 
 [User segmentation](/web/liferay-emporio/documentation/-/knowledge_base/1-0/user-segmentation)
 allows pricing, catalog visibility, and other features to be precisely targeted
@@ -59,13 +60,20 @@ separately and automatically. When an order is placed, @commerce@ will determine
 which warehouse is closest to the delivery point and process the order
 accordingly.
 
-## Site Initializers
+## Installation [](id=installation)
+
+You can install @commerce@ from 
+[Liferay Developer Network](https://dev.liferay.com/web/liferay-emporio).
+You will also need @product-ver@; see installation instructions 
+[here](/discover/deployment/-/knowledge_base/7-1/deploying-product).
+
+## Site Initializers [](id=site-initializers)
 
 The quickest way to get going with @commerce@ is to use a site initializer.
 A site initializer is a type of 
 [site template]( /discover/portal/-/knowledge_base/7-1/building-sites-from-templates)
 that does much of the initial work of setting up a store. Creating a site with
-a site initializer is an easy way to see what Liferay Commerce can do, and can be used
+a site initializer is an easy way to see what @commerce@ can do, and can be used
 to get a head start on a live store: modify the theme to suit your purposes,
 replace the dummy catalog with your own data, and you're well on your way.
 
