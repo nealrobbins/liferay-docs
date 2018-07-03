@@ -24,7 +24,7 @@ selecting the same order in step 2. Of course, you won't have this option if you
 selected all of the order's products in step 3 the first time through.
 
 You can return to a shipment at a later time, either to add or remove products
-or to update it's status:
+or to update its status:
 
 1.  Go to *Site* &rarr; *Commerce* &rarr; *Shipments* and select a shipment from
     the list.
