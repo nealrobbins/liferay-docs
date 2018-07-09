@@ -27,8 +27,9 @@ relations on a single page.
 The different types of product relations are flexible. Since each one functions
 the same way, you can add, remove, or rename types at will. Follow these steps:
 
-1.  Go to *Control Panel* &rarr; *System Settings* &rarr; *Commerce*
-    &rarr; *Product Relationship Types*.
+1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*. Find
+    the *Commerce* section, click *Catalog* and go to the *Product Relations*
+    tab.
 
 2.  Click *Add* to create a new type, or click the
     ![Options](../../../images/icon-options.png) button to edit or delete an

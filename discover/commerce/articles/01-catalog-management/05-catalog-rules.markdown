@@ -13,7 +13,7 @@ Follow these steps:
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog Rules* and click on the
     ![Add](../../images/icon-add.png) button.
 
-2.  Give the rule a *Name*, check the box next to *Active*, and select
+2.  Give the rule a *Name*, enable the *Active* toggle, and select
     *Categories* from the *Type* drop-down box.
 
 3.  Click the *Select* button that appears and select the categories 
