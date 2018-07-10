@@ -125,7 +125,7 @@ For more information on creating and using price lists, see
 ### Inventory [](id=inventory)
 
 The *Inventory* tab has one field for each warehouse you have in use (if you
-[inventory](/web/liferay-emporio/documentation/-/knowledge_base/7-1/inventory)
+use more than one warehouse, see
 [Warehouses](/web/liferay-emporio/documentation/-/knowledge_base/1-0/warehouses)).
 Enter the number in stock at each warehouse. The quantity is adjusted
 automatically as orders are processed.
