@@ -65,7 +65,7 @@ accordingly.
 ## Installation [](id=installation)
 
 You can install @commerce@ from 
-[Liferay Marketplace](https://marketplace.liferay.com).
+[Github](https://github.com/liferay/com-liferay-commerce).
 You will also need @product-ver@; see installation instructions 
 [here](/discover/deployment/-/knowledge_base/7-1/deploying-product).
 

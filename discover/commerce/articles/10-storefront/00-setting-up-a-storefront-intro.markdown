@@ -2,7 +2,9 @@
 
 Once the catalog is populated, you need a way to display its contents to buyers,
 along with an interface for placing orders. If you choose not to use a Site
-Initializer such as Beryl, you must set this up manually. 
+Initializer such as
+[Beryl](/web/liferay-emporio/documentation/-/knowledge_base/1-0/customer-portal), 
+you must set this up manually. 
 
 Here are the components you need:
 
