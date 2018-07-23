@@ -14,13 +14,16 @@ Follow these steps to connect your project to your Liferay DXP instance.
 
 ### Step 1: Register your Liferay DXP instance with Liferay Connected Services [](id=step-1-register-your-liferay-dxp-instance-with-liferay-connected-services)
 
-Register your Liferay DXP instance with
-[Liferay Connected Services](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services). 
+Register your Liferay DXP instance with Liferay Connected Services:
+
+- [Liferay Connected Services for Liferay DXP 7.0](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services) 
+
+- [Liferay Connected Services for Liferay DXP 7.1](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-liferay-dxp-with-liferay-connected-services)
 
 ### Step 2: Install Required Liferay DXP Fix Packs [](id=step-2-install-required-liferay-dxp-fix-packs)
 
-[Install fix pack 52](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay)
-to your Liferay DXP instance. 
+For Liferay DXP 7.0, 
+[install fix pack 52](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-liferay). 
 
 ### Step 3: Install the Liferay Analytics Cloud Connector [](id=step-3-install-the-liferay-analytics-cloud-connector)
 
