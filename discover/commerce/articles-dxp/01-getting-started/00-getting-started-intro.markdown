@@ -65,10 +65,44 @@ accordingly.
 ## Installation [](id=installation)
 
 Enterprise subscribers with a Liferay Commerce order can install @commerce@
-from the
+from the 
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/commerce).
-You will also need @product-ver@; see installation instructions
+You will need either an order number that includes @commerce@ or an .xml
+activation key. You will also need @product-ver@; see installation instructions
 [here](/discover/deployment/-/knowledge_base/7-1/deploying-product).
+
+Once you've downloaded the @commerce@ .lpkg from Customer Portal, follow these
+steps if you have an .xml key:
+
+1.  Start @product-ver@. 
+
+2.  Drop your activation key into the *deploy* folder in your Liferay home
+    folder. Wait for the log to notify you that the license has been registered.
+
+3.  Drop the @commerce@ .lpkg into the *deploy* folder as well. Wait for the log
+    to notify you that your instance must be restarted.
+
+4.  Restart your instance.
+
+5.  Go to *Control Panel* &rarr; *Configuration* &rarr; *Search* and reindex all
+    search indexes.
+
+Follow these steps if you have an order number that includes @commerce@:
+
+1.  Start @product-ver@.
+
+2.  Drop the .lpkg into the *deploy* folder in your Liferay home folder.
+
+3.  Go to *Control Panel* &rarr; *Apps* &rarr; *License Manager* and enter your
+    Order ID into the provided field. Click *Query*.
+
+4.  Select Liferay Commerce from the drop-down menu that appears and click
+    *Register*.
+
+5.  Wait for a success message and restart @product@.
+
+6.  Go to *Control Panel* &rarr; *Configuration* &rarr; *Search* and reindex all
+    search indexes.
 
 ## Site Initializers [](id=site-initializers)
 
