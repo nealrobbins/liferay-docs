@@ -1,11 +1,13 @@
-# Validating the Shopping Cart
+# Customizing Cart Validation[](id=customizing-cart-validation)
 
-In each product's *Configuration* page, there are a number of settings which
-administrators can adjust to govern the conditions under which the product can
-be purchased---minimum order quantities can be set, out-of-stock items may or
-may not be back-ordered, etc. Whenever a customer attempts to make a purchase,
-@commerce@ checks to make sure the transaction is permissible. This tutorial
-describes how to make custom changes to the validation check.
+In each product's
+[*Configuration*](/web/emporio/documentation/-/knowledge_base/1-0/configuration)
+page, there are several settings which administrators can adjust to govern the
+conditions under which the product can be purchased---minimum order quantities
+can be set, out-of-stock items may or may not be backordered, etc. Whenever
+a customer attempts to make a purchase, @commerce@ checks to make sure the
+transaction is permissible. This tutorial describes how to make custom changes
+to the validation check.
 
 @commerce@ makes an initial check when an item is added to the cart,
 but the cart is validated a second time when the customer checks out. Out of the
