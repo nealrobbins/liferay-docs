@@ -67,7 +67,7 @@ the products is published and switches it to unpublished if it is.
 	}
 
 After the class's core functionality is complete, you need the `getKey` method
-to return the classes `KEY` identifier:
+to return the class's `KEY` identifier:
 
 	@Override
 	public String getKey() {
