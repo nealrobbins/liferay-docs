@@ -1,29 +1,31 @@
 # Customizing Cart Validation[](id=customizing-cart-validation)
 
+Whenever a buyer adds a product to his cart or attempts to checkout, @commerce@
+checks to make sure that the transaction is permissible. This tutorial
+describes how to inject custom behavior into the validation check.
+
 In each product's
 [*Configuration*](/web/emporio/documentation/-/knowledge_base/1-0/configuration)
 page, there are several settings which administrators can adjust to govern the
 conditions under which the product can be purchased---minimum order quantities
-can be set, out-of-stock items may or may not be backordered, etc. Whenever
-a customer attempts to make a purchase, @commerce@ checks to make sure the
-transaction is permissible. This tutorial describes how to make custom changes
-to the validation check.
-
-@commerce@ makes an initial check when an item is added to the cart,
-but the cart is validated a second time when the customer checks out. Out of the
-box, this ensures that conditions have not changed (for example, a product my
-have run out of stock) between the first validation and the second. A custom
-solution, however, may make additional use of this two-step validation (for
-instance, to ensure that product A can only be purchased alongside product B).
+can be set, out-of-stock items may or may not be backordered, etc. Out of the
+box, @commerce@ performs a validation check on each transaction to ensure these
+conditions are met. An initial check is made when an item is added to the cart,
+and again as the buyer checks out, revalidating the cart at each step in the
+checkout process. This ensures that conditions have not changed (for example, a
+product my have run out of stock) between the first validation and order
+placement.
 
 Cart validation is handled by `DefaultCommerceOrderValidatorImpl`, which
-implements `CommerceOrderValidator`. To customize your own validator, modify
-`DefaultCommerceOrderValidator` or create your own class implementing the same
-interface.
+implements `CommerceOrderValidator`. To impose new conditions on purchases, you
+can customize the validator by creating a new class implementing the same
+interface, adding its functionality on top of
+`DefaultCommerceOrderValidatorImpl`.
 
 Follow these steps:
 
-1.  Add a dependency on `com.liferay.commerce.api` to the `build.gradle` file.
+1.  Create a new module an add a dependency on `com.liferay.commerce.api` to
+    the `build.gradle` file.
 
 2.  Implement the `CommerceOrderValidator` interface.
 
@@ -58,11 +60,12 @@ this:
             return KEY;
         }
 
-The interface requires two more methods after the `getKey` method. These methods
-contain the actual logic of the validating check---this is where you'll want to
-insert your own code. The following method, when called, validates products that
-are already in the cart. This example checks that backorders are allowed and
-that the product quantities in the order are permissible. It then calls on
+The interface requires two more methods after the `getKey` method. These
+methods contain the actual logic of the validating check---this is where you'll
+want to insert your own code. The following method is called whenever a buyer
+procedes to a new step in the checkout process, and validates products that are
+already in the cart. This example checks that backorders are allowed and that
+the product quantities in the order are permissible. It then calls on
 `CommerceOrderValidatorResult` to display the outcome to the user:
 
 	@Override
