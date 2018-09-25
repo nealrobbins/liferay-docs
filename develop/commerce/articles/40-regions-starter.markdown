@@ -29,7 +29,82 @@ First, add dependencies to `build.gradle`. It should look like this:
         provided project(":private:apps:commerce:commerce-api")
     }
 
-<!--Note that the above code contains a dependency on commerce-api, but not on
+<!--Note that the above build script contains a dependency on commerce-api, but not on
 commerce-product-api--> Then create a component to implement the interface. In
 the example below, the class `ItalyCommerceRegionsStarter` contains the the
-constant `ITALY_NUMERIC_ISO_CODE`. This constant is used to 
+constant `ITALY_NUMERIC_ISO_CODE`. This constant must be set to the country's
+3-digit ISO code and provides the value for the `commerce.region.starter.key`
+property. This connects the region starter with the correct country in
+@commerce@'s country list.
+
+
+    package com.liferay.commerce.sample;
+
+    import com.liferay.commerce.model.CommerceCountry;
+    import com.liferay.commerce.service.CommerceCountryLocalService;
+    import com.liferay.commerce.service.CommerceRegionLocalService;
+    import com.liferay.commerce.starter.CommerceRegionsStarter;
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.service.ServiceContext;
+
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.Reference;
+
+    @Component(
+        immediate = true,
+        property = "commerce.region.starter.key=" + ItalyCommerceRegionsStarter.ITALY_NUMERIC_ISO_CODE,
+        service = CommerceRegionsStarter.class
+    )
+    public class ItalyCommerceRegionsStarter implements CommerceRegionsStarter {
+
+        public static final int ITALY_NUMERIC_ISO_CODE = 380;
+
+        public CommerceCountry getCommerceCountry(long groupId)
+            throws PortalException {
+
+            return _commerceCountryLocalService.fetchCommerceCountry(
+                groupId, ITALY_NUMERIC_ISO_CODE);
+        }
+
+Finally, you can add your own logic to the interface's `start` method. The
+example below adds four regions to Italy's region list. Besides the name of each
+region, the method includes a postal code for each region, and a number
+determining the order in which it will be listed.
+
+    @Override
+        public void start(ServiceContext serviceContext) throws Exception {
+            CommerceCountry commerceCountry = getCommerceCountry(
+                serviceContext.getScopeGroupId());
+
+            if (commerceCountry == null) {
+                return;
+            }
+
+            JSONArray jsonArray = getCommerceRegionsJSONArray();
+
+            _commerceRegionLocalService.addCommerceRegion(
+                    commerceCountry.getCommerceCountryId(),"Foggia" , "FG", 1,
+                    true, serviceContext);
+            _commerceRegionLocalService.addCommerceRegion(
+                    commerceCountry.getCommerceCountryId(),"Milano" , "MI", 2,
+                    true, serviceContext);
+            _commerceRegionLocalService.addCommerceRegion(
+                    commerceCountry.getCommerceCountryId(),"Bari" , "BA", 3,
+                    true, serviceContext);
+            _commerceRegionLocalService.addCommerceRegion(
+                    commerceCountry.getCommerceCountryId(),"Torino" , "TO", 4,
+                    true, serviceContext);
+        }
+
+        @Reference
+        private CommerceCountryLocalService _commerceCountryLocalService;
+
+        @Reference
+        private CommerceRegionLocalService _commerceRegionLocalService;
+    }
+
+Of course, listing each region in the method is only an example and far from an
+ideal solution---admins can accomplish the same thing manually without tying up
+a developer's time. For a production use case, you're likely to want your
+`start` method to retrieve regions from a database, json web service, or some
+other resource.
