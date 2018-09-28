@@ -24,15 +24,15 @@ First, add dependencies to `build.gradle`. It should look like this:
     targetCompatibility = "1.8"
 
     dependencies {
-        provided group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.5.0"
-        provided group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
-        provided project(":private:apps:commerce:commerce-api")
+        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.api", version: "2.0.0-SNAPSHOT"
+        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.5.0"
+        compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.api", version: "2.0.0"
     }
 
-<!--Note that the above build script contains a dependency on commerce-api, but not on
-commerce-product-api--> Then create a component to implement the interface. In
-the example below, the class `ItalyCommerceRegionsStarter` contains the the
-constant `ITALY_NUMERIC_ISO_CODE`. This constant must be set to the country's
+Then create a component to implement the interface. In
+the example below, the class `CanadaCommerceRegionsStarter` contains the the
+constant `CANADA_NUMERIC_ISO_CODE`. This constant must be set to the country's
 3-digit ISO code and provides the value for the `commerce.region.starter.key`
 property. This connects the region starter with the correct country in
 @commerce@'s country list.
@@ -52,22 +52,22 @@ property. This connects the region starter with the correct country in
 
     @Component(
         immediate = true,
-        property = "commerce.region.starter.key=" + ItalyCommerceRegionsStarter.ITALY_NUMERIC_ISO_CODE,
+        property = "commerce.region.starter.key=" + CanadaCommerceRegionsStarter.CANADA_NUMERIC_ISO_CODE,
         service = CommerceRegionsStarter.class
     )
-    public class ItalyCommerceRegionsStarter implements CommerceRegionsStarter {
+    public class CanadaCommerceRegionsStarter implements CommerceRegionsStarter {
 
-        public static final int ITALY_NUMERIC_ISO_CODE = 380;
+        public static final int CANADA_NUMERIC_ISO_CODE = 124;
 
         public CommerceCountry getCommerceCountry(long groupId)
             throws PortalException {
 
             return _commerceCountryLocalService.fetchCommerceCountry(
-                groupId, ITALY_NUMERIC_ISO_CODE);
+                groupId, CANADA_NUMERIC_ISO_CODE);
         }
 
 Finally, you can add your own logic to the interface's `start` method. The
-example below adds four regions to Italy's region list. Besides the name of each
+example below adds four regions to Canada's region list. Besides the name of each
 region, the method includes a postal code for each region, and a number
 determining the order in which it will be listed.
 
@@ -80,19 +80,17 @@ determining the order in which it will be listed.
                 return;
             }
 
-            JSONArray jsonArray = getCommerceRegionsJSONArray();
-
             _commerceRegionLocalService.addCommerceRegion(
-                    commerceCountry.getCommerceCountryId(),"Foggia" , "FG", 1,
+                    commerceCountry.getCommerceCountryId(),"Ontario" , "ON", 1,
                     true, serviceContext);
             _commerceRegionLocalService.addCommerceRegion(
-                    commerceCountry.getCommerceCountryId(),"Milano" , "MI", 2,
+                    commerceCountry.getCommerceCountryId(),"Manitoba" , "MB", 2,
                     true, serviceContext);
             _commerceRegionLocalService.addCommerceRegion(
-                    commerceCountry.getCommerceCountryId(),"Bari" , "BA", 3,
+                    commerceCountry.getCommerceCountryId(),"British Colombia" , "BC", 3,
                     true, serviceContext);
             _commerceRegionLocalService.addCommerceRegion(
-                    commerceCountry.getCommerceCountryId(),"Torino" , "TO", 4,
+                    commerceCountry.getCommerceCountryId(),"Yukon" , "YT", 4,
                     true, serviceContext);
         }
 
