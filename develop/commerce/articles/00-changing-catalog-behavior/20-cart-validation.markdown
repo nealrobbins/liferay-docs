@@ -18,42 +18,47 @@ placement.
 
 Cart validation is handled by `DefaultCommerceOrderValidatorImpl`, which
 implements `CommerceOrderValidator`. To impose new conditions on purchases, you
-can customize the validator by creating a new class implementing the same
+can customize the validator by creating a new component implementing the same
 interface, adding its functionality on top of
 `DefaultCommerceOrderValidatorImpl`.
 
 Follow these steps:
 
-1.  Create a new module an add a dependency on `com.liferay.commerce.api` to
-    the `build.gradle` file.
+1.  Create a new module an add a dependencies on `com.liferay.commerce.api` and
+    `com.liferay.commerce.product.api` to the `build.gradle` file.
 
-2.  Implement the `CommerceOrderValidator` interface.
+2.  Create a new component to implement the `CommerceOrderValidator` interface.
 
 3.  Include your custom rules in the interface's methods.
 
-First, add the dependency to `build.gradle`. It should look like this:
+First, add dependencies to `build.gradle`. The build script should look like
+this:
+
+
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
 
     dependencies {
-    … 
-    compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.api", version: "1.0.0" 
-    … 
+        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.api", version: "2.0.0"
+        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.api", version: "2.0.0"
+        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.5.0"
+        compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
     }
 
-Then implement the interface. Out of the box, the implementation looks like
-this:
+Then implement the interface:
 
     @Component(
         immediate = true,
         property = {
-            "commerce.order.validator.key=" + DefaultCommerceOrderValidatorImpl.KEY,
+            "commerce.order.validator.key=" + SampleCommerceOrderValidatorImpl.KEY,
             "commerce.order.validator.priority:Integer=10"
         },
         service = CommerceOrderValidator.class
     )
-    public class DefaultCommerceOrderValidatorImpl
+    public class SampleCommerceOrderValidatorImpl
         implements CommerceOrderValidator {
 
-        public static final String KEY = "default";
+        public static final String KEY = "sample-validator";
 
         @Override
         public String getKey() {
@@ -64,119 +69,44 @@ The interface requires two more methods after the `getKey` method. These
 methods contain the actual logic of the validating check---this is where you'll
 want to insert your own code. The following method is called whenever a buyer
 procedes to a new step in the checkout process, and validates products that are
-already in the cart. This example checks that backorders are allowed and that
-the product quantities in the order are permissible. It then calls on
-`CommerceOrderValidatorResult` to display the outcome to the user:
+already in the cart. It then returns the `CommerceOrderValidatorResult` object
+to display the outcome to the user:
 
-	@Override
-	public CommerceOrderValidatorResult validate(
-			CommerceOrderItem commerceOrderItem)
-		throws PortalException {
+    @Override
+    public CommerceOrderValidatorResult validate(
+            CommerceOrderItem commerceOrderItem)
+        throws PortalException {
+        
+        if (commerceOrderItem.getQuantity() != 100) {
 
-		CPInstance cpInstance = commerceOrderItem.getCPInstance();
+            return new CommerceOrderValidatorResult(
+                commerceOrderItem.getCommerceOrderItemId(), false,
+                "quantity-is-not-valid");
+        }
 
-		CPDefinitionInventory cpDefinitionInventory =
-			_cpDefinitionInventoryLocalService.
-				fetchCPDefinitionInventoryByCPDefinitionId(
-					cpInstance.getCPDefinitionId());
+        return new CommerceOrderValidatorResult(true);
+    }
 
-		CPDefinitionInventoryEngine cpDefinitionInventoryEngine =
-			_cpDefinitionInventoryEngineRegistry.getCPDefinitionInventoryEngine(
-				cpDefinitionInventory);
-
-		if (cpDefinitionInventoryEngine.isBackOrderAllowed(cpInstance)) {
-			return new CommerceOrderValidatorResult(true);
-		}
-
-		int minOrderQuantity = cpDefinitionInventoryEngine.getMinOrderQuantity(
-			cpInstance);
-		int maxOrderQuantity = cpDefinitionInventoryEngine.getMaxOrderQuantity(
-			cpInstance);
-		String[] allowedOrderQuantities =
-			cpDefinitionInventoryEngine.getAllowedOrderQuantities(cpInstance);
-
-		if ((minOrderQuantity > 0) &&
-			(commerceOrderItem.getQuantity() < minOrderQuantity)) {
-
-			return new CommerceOrderValidatorResult(
-				commerceOrderItem.getCommerceOrderItemId(), false,
-				"minimum-quantity-is-x", String.valueOf(minOrderQuantity));
-		}
-
-		if ((maxOrderQuantity > 0) &&
-			(commerceOrderItem.getQuantity() > maxOrderQuantity)) {
-
-			return new CommerceOrderValidatorResult(
-				commerceOrderItem.getCommerceOrderItemId(), false,
-				"maximum-quantity-is-x", String.valueOf(maxOrderQuantity));
-		}
-
-		if ((allowedOrderQuantities.length > 0) &&
-			!ArrayUtil.contains(
-				allowedOrderQuantities,
-				String.valueOf(commerceOrderItem.getQuantity()))) {
-
-			return new CommerceOrderValidatorResult(
-				commerceOrderItem.getCommerceOrderItemId(), false,
-				"quantity-is-not-allowed");
-		}
-
-        return new CommerceOrderValidatorResult(true); }
-
-The interface's second `validate` method makes the same checks as the first. In
+The interface's second `validate` method makes the same check as the first. In
 this case, however, the method checks products as they are added to the cart:
 
+    @Override
+        public CommerceOrderValidatorResult validate(
+                CPInstance cpInstance, int quantity)
+            throws PortalException {
 
-	@Override
-	public CommerceOrderValidatorResult validate(
-			CPInstance cpInstance, int quantity)
-		throws PortalException {
+            if (cpInstance == null) {
+                return new CommerceOrderValidatorResult(false);
+            }
 
-		if (cpInstance == null) {
-			return new CommerceOrderValidatorResult(false);
-		}
+    if (quantity != 100) {
 
-		CPDefinitionInventory cpDefinitionInventory =
-			_cpDefinitionInventoryLocalService.
-				fetchCPDefinitionInventoryByCPDefinitionId(
-					cpInstance.getCPDefinitionId());
+            return new CommerceOrderValidatorResult(false, "quantity-is-not-valid");
+        }
+            return new CommerceOrderValidatorResult(true);
+        }
+    }
 
-		CPDefinitionInventoryEngine cpDefinitionInventoryEngine =
-			_cpDefinitionInventoryEngineRegistry.getCPDefinitionInventoryEngine(
-				cpDefinitionInventory);
-
-		int minOrderQuantity = cpDefinitionInventoryEngine.getMinOrderQuantity(
-			cpInstance);
-		int maxOrderQuantity = cpDefinitionInventoryEngine.getMaxOrderQuantity(
-			cpInstance);
-		String[] allowedOrderQuantities =
-			cpDefinitionInventoryEngine.getAllowedOrderQuantities(cpInstance);
-
-		if (cpDefinitionInventoryEngine.isBackOrderAllowed(cpInstance) &&
-			(quantity >= minOrderQuantity) && (quantity <= maxOrderQuantity)) {
-
-			return new CommerceOrderValidatorResult(true);
-		}
-
-		if ((minOrderQuantity > 0) && (quantity < minOrderQuantity)) {
-			return new CommerceOrderValidatorResult(
-				false, "minimum-quantity-is-x",
-				String.valueOf(minOrderQuantity));
-		}
-
-		if ((maxOrderQuantity > 0) && (quantity > maxOrderQuantity)) {
-			return new CommerceOrderValidatorResult(
-				false, "maximum-quantity-is-x",
-				String.valueOf(maxOrderQuantity));
-		}
-
-		if ((allowedOrderQuantities.length > 0) &&
-			!ArrayUtil.contains(
-				allowedOrderQuantities, String.valueOf(quantity))) {
-
-			return new CommerceOrderValidatorResult(
-				false, "quantity-is-not-allowed");
-		}
-
-		return new CommerceOrderValidatorResult(true);
-	}
+In this is example, the validator checks whether an an order's quanitity is 100
+and rejects any other quanitity. For a real-world example see
+`DefaultCommerceOrderValidatorImpl.java`.
