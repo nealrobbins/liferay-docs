@@ -7,11 +7,11 @@ calculation to a database you maintain with up-to-date tax information by
 region?  To make it easy to a custom tax solution, @commerce@ exposes an
 extension point, `CommerceTaxEngine`.
 
-This tutorial describes how to implement a custom tax option that administrators
-can activate from *Commerce* &rarr; *Settings* &rarr; *Taxes*. For the sake of
-simplicity, the example below imposes a flat 10% tax rate on every product. Of
-course, your real-world solution should be more sophisticated---@commerce@
-doesn't require customization to charge a flat tax.
+This tutorial describes how to implement a custom tax calculation that
+administrators can activate from *Commerce* &rarr; *Settings* &rarr; *Taxes*.
+For the sake of simplicity, the example below imposes a flat 10% tax rate on
+every product. Of course, your real-world solution should be more
+sophisticated---@commerce@ doesn't require customization to charge a flat tax.
 
 Follow these steps:
 
