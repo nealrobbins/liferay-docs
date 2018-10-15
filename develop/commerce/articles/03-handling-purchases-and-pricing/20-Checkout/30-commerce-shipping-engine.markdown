@@ -2,7 +2,7 @@
 
 @commerce@ includes three shipping methods out of the box: *fixed*- and
 *variable*-rate methods give you a wide range of options for calculating shipping
-costs in-house, while the FedEx method provides options for you to integrate
+costs in-house, while the FedEx method provides an option for you to integrate
 your system with the multinational courier of the same name. Since you may want
 a similar solution to provide integration with other shipping companies,
 @commerce@ exposes an extension point to allow new shipping methods to be
@@ -12,8 +12,6 @@ Creating a new shipping method requires you to implement the
 `CommerceShippingEngine` interface. This creates a new method that
 administrators can select from *Site Menu* &rarr; *Commerce* &rarr; *Settings*
 &rarr; *Shipping Methods*.
-
-Screenshot? Delivery by UAV?
 
 This tutorial covers the creation of new shipping methods. Business logic to
 integrate with any particular shipping company (UPS, DHL, etc.) is the
@@ -29,7 +27,7 @@ Follow these steps:
     `com.liferay.commerce.model.CommerceShippingEngine` interface.
 
 First, add dependencies to `build.gradle`. The build script should look like
-this (DXP GA1, Commerce 1.0.0):
+this<!--in DXP GA1, Commerce 1.0.0-->
 
     sourceCompatibility = "1.8"
     targetCompatibility = "1.8"
@@ -56,11 +54,8 @@ Next, create your component class:
 The KEY constant in this example provides a unique identifier for this shipping method.
 
 The `getCommerceShippingOptionLabel` method returns a localized value for the
-shipping method's name. In this particular example, the method is never used as
-the label is hard-coded in the subsequent method. In a real-world application,
-however, a call on `getCommerceShippingOptionLabel` is likely to be used to
-provide a name for the shipping method appropriate to a user's language
-settings.
+shipping method's name, and is called when during the checkout process when a
+buyer is prompted to select a shipping option.
 
     @Override
     public String getCommerceShippingOptionLabel(String name, Locale locale) {
@@ -83,16 +78,16 @@ The main business logic of the shipping method is handled by the
                 new ArrayList<>();
 
 
-            commerceShippingOptions.add(new CommerceShippingOption(“Sample Option”, “Sample Option”, BigDecimal.TEN));
+            commerceShippingOptions.add(new CommerceShippingOption("sample-option", "sample-option", BigDecimal.TEN));
             
                    return commerceShippingOptions;
         }
 
 This method must recieve all the information necessary to calcuate the shipping
 cost in order to return a `CommerceShippingOptions` object. In this case, the
-object returned has parameters specifying a label and a name (displayed in the
-UI and saved to the database, respectively), both of "Sample Option" as well as
-a fixed shipping cost of 10 (in your store's primary currency).
+object's parameters reference the "sameple-option" language key---this will be
+used by `getCommerceShippingOptionsLabel` to identify the shipping method in
+the UI---and specify a fixed cost of 10 (in your store's primary currency).
 
 The component's final methods provide addtional labelling information:
 
