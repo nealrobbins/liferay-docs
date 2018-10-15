@@ -1,6 +1,6 @@
 # Price Lists [](id=price-lists)
 
-A price list contains a list of products with alternate prices from what's
+A price list contains a list of products with alternate prices to those
 stored by the catalog. The prices stored by the list are only available
 to members of specified user segments. Other buyers must pay the base price
 stored by the catalog's SKUs.
