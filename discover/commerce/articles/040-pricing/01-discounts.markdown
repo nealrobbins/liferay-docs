@@ -1,11 +1,12 @@
 # Discounts [](id=discounts)
 
-A discount applies a modifier to a product's base price. It can be an absolute
-number or a percentage, and can be applied to a limited number of products or to
-the entire catalog. It can be available to all buyers or to a defined 
-[user segment](/web/commerce/documentation/-/knowledge_base/1-0/user-segmentation),
+A discount applies a modifier to a product's price. It can be an absolute
+number or a percentage, and can be applied to a limited number of products or
+to the entire catalog. It can be available to all buyers or to a defined [user
+segment](/web/commerce/documentation/-/knowledge_base/1-0/user-segmentation),
 or to a more narrowly defined group of customers that meet certain
-qualifications. Unlike a price list, a discount always *reduces* the base price.
+qualifications. Unlike a price list, a discount always *reduces* the base
+price.
 
 ## Creating a Discount [](id=creating-a-discount)
 
