@@ -1,67 +1,110 @@
- # Pricing [](id=pricing)
+# Products [](id=products)
 
-When all you want to do is assign one price to one SKU, you can handle pricing
-in the catalog (see
-[SKUs](web/commerce/documentation/-/knowledge_base/1-0/skus#pricing)). 
-If you want to do anything more sophisticated, you need to understand
-@commerce@'s pricing hierarchy. Specifically, you need to understand the
-difference between a *base price*, a *price list*, a *tiered price*, a *promo
-price*, and a *discount*.
+The catalog supports three product types: simple, grouped and virtual.
 
-A **Base Price** is set in a product's SKUs tab and applies to all purchases of
-that product, unless it is superseded by another price.
+**Simple Product:** any physical product for which inventory is tracked. Almost
+any physical item can be a simple product.
 
-A **Price List** applies prices to specified products for a specified user
-segment. It supersedes the base price.
+**Grouped Product:** two or more products from the catalog, packaged together to
+be sold as a single item. Grouped products are not tracked in
+inventory---instead, the catalog tracks all of the products contained in the
+group individually. A grouped product can contain simple products, other grouped
+products, or virtual products.
 
-A **Tiered Price** is a price that is applied to orders that meet specified
-quantity requirements. It is only available in the context of a price list, and
-supersedes the list's price.
+**Virtual Products:** A virtual product is any non-physical product. Typically,
+a virtual product's inventory is not tracked. This may mean that the product is
+downloaded rather than shipped, as in the case of a music file or an electronic
+publication. Other virtual products might be services, warranties, or other
+goods.
 
-A **Promo Price** can be applied to a base price, a price list price, and to
-a tiered price, superseding each. When a price is superseded by a price list or
-tiered price, its promo is superseded as well.
+## Creating a Product [](id=creating-a-product)
 
-![Figure 1: The appropriate price will be applied depending on what user segments a buyer belongs to, and on the quantity he purchases.](../../images/price-hierarchy.png)
+Follow these steps to create a product:
 
-Once the appropriate price is applied, a discount can be applied. A **Discount**
-does not supersede a product's price but instead applies a modifier to it.
+1.  From the catalog's *Products* tab, click on the
+    ![Add](../../../images/icon-add.png) button at the top-right of the screen
+    and then select a product type: simple, grouped or virtual.
 
-The discount is the final component that goes into calculating an order's
-subtotal. Then 
-[taxes](web/commerce/documentation/-/knowledge_base/1-0/taxes)
-are applied and then 
-[shipping costs](web/commerce/documentation/-/knowledge_base/1-0/shipping-methods) 
-in order to calculate the total.
+2.  Next, enter basic product information into the *Add Product* form (see below
+    for details).
 
-+$$$
+    Once the *Add Product* form is complete to your satisfaction, click the
+    *Publish* button to add the product to the catalog. The product tab bar appears
+    at the top of the screen (and can be reached again at any time by navigating to
+    the catalog and selecting a product). The first tab, *Details*, is populated
+    with your responses from the *Add Product* form.
 
-Should you use a price list or a discount to adjust your products' prices?
+3.  Enter additional information specific to the product type you selected in
+    step 1.
 
-It depends---and you may want a combination of both. If you want to offer
-a special price exclusively to a particular group of customers, and you want to
-set the adjusted price for each product individually, you should use a price
-list.
+**For a Simple Product**, there is no additional information to enter. When
+you create a simple product, the standard product tab bar is displayed,
+starting with a *Details* tab where you can edit entries from the *Add
+Product* form.
 
-If you want to set prices using a currency other than your store's default, or
-if you want to increase prices rather than lower them, you should use a price
-list.
+**For a Grouped Product** you must specify the products that it will
+contain. A grouped product has an extra tab---*Grouped*---in its product tab
+bar. From that tab, click on the ![Add](../../../images/icon-add.png) button
+in the upper-right to select any number of products. Once products have been
+added to the group, they can be edited individually
+(![options](../../../images/icon-options.png) &rarr; *Edit*) to set
+a quantity and a priority (priority establishes the order in which items are
+displayed---lower numbers come first).
 
-If you want to offer a reduced rate to bulk buyers, you should use a price list
-with tiered pricing.
+![Figure 1: The features that make a grouped product unique can be conveniently found in the *Grouped* tab.](../../../images/grouped-product.png)
 
-If you want to apply a blanket modifier to a group of products, however---for
-instance, 10% off everything in the catalog, or $10 off everything in
-a particular category---you should use a discount. A discount can be applied to
-a specific user segment or made available to all customers.
+**A Virtual Product** also has an extra tab---*Virtual*---in its product tab
+bar. The *Virtual* tab contains the following fields which should be filled
+in if applicable:
 
-You should use a discount if you want to:
+**URL/Select File**: If your virtual product is stored at a web address, enter
+the URL here. Alternatively, click *Select* to upload a local file or select one
+that was uploaded previously.
 
-- limit the number of products that can be bought for the adjusted price 
- 
-- Make special pricing available to customers who enter a coupon code 
+**Activation Status**: Select the stage in the order process at which the
+product becomes available for download.
 
-- Make special pricing available to customers who spend or have spent
-  a specified amount 
+**Duration**: Enter the number of days after purchase in which customers
+will have access to the file. A value of 0 sets no limit.
 
-$$$
+**Max Usages**: Set the number of times a customer can download the file.
+A value of 0 sets no limit.
+
+**Sample**: Upload or enter a URL for a sample file to provide to prospective
+buyers. The *Use Sample* box must be checked for customers to see the
+sample.
+
+**Terms of Use**: Either enter a Terms of Use document directly into the
+integrated editor, or select a document previously uploaded to Web
+Content.
+
+### Add Product Form [](id=add-product-form)
+
+The *Add Product* form contains the following fields:
+
+**Title**: Name your product. This is the only required field.
+
+**Short Description**: Enter an abstract of the product's full description if
+you must display brief version. Text entered here could be displayed where the
+product appears in thumbnail form or in search results---anywhere space is
+limited.
+
+**Full Description**: This text can appear on the product page. The integrated
+text editor provides a number of formatting options that appear when text is
+selected, and clicking on the *Add* button that appears when the editor is in
+focus provides additional options. For more flexibility, click on the *Code
+View* (</>) button on the right to edit the html directly.
+
+**Friendly URL**: This is the URL for the product page. It auto-fills but can be
+changed. If you create a product display page (see
+[configuration](/web/commerce/documentation/-/knowledge_base/1-0/configuration#display-page)),
+you establish a relationship between the product, the page, and the URL entered
+in this field.
+
+**Meta Title, Meta Keywords, Meta Description**: Descriptors entered in these
+fields can help search engines locate your products. 
+
+**Schedule**: Products can be displayed to customers for a preset window of
+time. If you don't want to bother with scheduling, make sure the *Never
+Expire* box is checked. Unchecking the *Published* box will remove the product
+from customers' view.
