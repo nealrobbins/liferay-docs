@@ -1,4 +1,4 @@
-# Customizing new catalog rule types
+# Customizing New Catalog Rule Types
 
 Catalog rules manage the catalog's visibility, determining exactly what products
 each user segment is able to see. Out of the box, there are two types of catalog
@@ -23,10 +23,10 @@ Follow these steps:
 2.  Create a new component and implement the
     `com.liferay.commerce.product.catalog.rule.CPRuleType` interface.
 
-3.  Add an administrative screen for your rule type to the Product Catalog Rule
-    portlet. The portlet uses the Screen Navigation Framework (link), so you can
-    extend it by contributing an appropriate JSP.<!--this part is a bit fuzzy.
-    Check Steve's docs and rework-->
+3.  Extend the administrative screen for your rule type to the Product Catalog Rule
+    portlet. The portlet uses the
+    [Screen Navigation Framework](/develop/tutorials/-/knowledge_base/7_1/screen-navigation-framework),
+    so you can extend it with a another component that contributes an appropriate JSP.
 
 First, create a new module. It's `build.gradle` should look like this:
 
@@ -43,17 +43,6 @@ First, create a new module. It's `build.gradle` should look like this:
 
 Next, create a component and implement the interface:
 
-    import com.liferay.commerce.product.catalog.rule.CPRuleType;
-    import com.liferay.commerce.product.model.CPDefinition;
-    import com.liferay.commerce.product.model.CPRule;
-    import com.liferay.portal.kernel.exception.PortalException;
-    import com.liferay.portal.kernel.language.LanguageUtil;
-    import com.liferay.portal.kernel.search.Document;
-    import com.liferay.portal.kernel.search.filter.BooleanFilter;
-    import com.liferay.portal.kernel.util.ParamUtil;
-    import com.liferay.portal.kernel.util.ResourceBundleUtil;
-    import com.liferay.portal.kernel.util.UnicodeProperties;
-
     import java.util.Locale;
     import java.util.Map;
     import java.util.ResourceBundle;
@@ -61,6 +50,18 @@ Next, create a component and implement the interface:
     import javax.servlet.http.HttpServletRequest;
 
     import org.osgi.service.component.annotations.Component;
+
+    import com.liferay.commerce.product.catalog.rule.CPRuleType;
+    import com.liferay.commerce.product.model.CPDefinition;
+    import com.liferay.commerce.product.model.CPRule;
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.language.LanguageUtil;
+    import com.liferay.portal.kernel.search.Document;
+    import com.liferay.portal.kernel.search.Field;
+    import com.liferay.portal.kernel.search.filter.BooleanFilter;
+    import com.liferay.portal.kernel.util.ParamUtil;
+    import com.liferay.portal.kernel.util.ResourceBundleUtil;
+    import com.liferay.portal.kernel.util.UnicodeProperties;
 
     @Component(
         immediate = true,
@@ -74,22 +75,43 @@ Next, create a component and implement the interface:
 
         public static final String KEY = "name-matching";
 
-Note that the `order` property
+Note that the `commerce.product.rule.type.key` property matches the class name.
+The `commerce.product.rule.type.order:Integer` property locates your rule type
+on the admin screen alongside other types.
 
+Next, include the methods required by the `CPRuleType` interface. 
 
-
+    @Override
+    public void contributeDocument(Document document, CPDefinition cpDefinition)
+        throws PortalException {
+    }
 
 The `contributeDocument` method provides the information required by the search
 indexer document in order for the appropriate products to be returned. While the
 method is required by the interface, it this case it takes no action as the
 `cpDefinition` name is already indexed.
 
-Include the `getKey` method, which identifies your rule type using the `KEY`
-constant when called.
+Add the `getKey` method, which identifies your rule type using the `KEY`
+constant when called:
+
+    @Override
+    public String getKey() {
+        return KEY;
+    }
 
 The `getLabel` method retrieves the language value associated with the `KEY`
 constant from the module's appropriate `Language.properties` file, which must be
-placed in your module's `src/main/resources/content` folder.
+placed in your module's `src/main/resources/content` folder. The language value
+provides the type's label on the frontend.
+
+    @Override
+    public String getLabel(Locale locale) {
+        ResourceBundle resourceBundle = ResourceBundleUtil.getBundle(
+            "content.Language", locale, getClass());
+
+        return LanguageUtil.get(resourceBundle, KEY);
+    }
+
 
 
 
