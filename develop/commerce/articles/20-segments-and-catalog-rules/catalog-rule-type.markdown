@@ -1,14 +1,14 @@
 # Customizing New Catalog Rule Types
 
-Catalog rules manage the catalog's visibility, determining exactly what products
-each user segment is able to see. Out of the box, there are two types of catalog
-rules:
+*Catalog Rules* manage the catalog's visibility, determining exactly what
+products each user segment is able to see. Out of the box, there are two types
+of catalog rules:
 
-**All Products:** A rule of this type enables users to see every product in the
+**All Products:** This enables specified users to see every product in the
 catalog.
 
-**Categories:** This enables users to see products only in categories specified
-by an administrator.
+**Categories:** This enables specified users to see selected product categories
+only. 
 
 Since the *Categories* rule type may not meet every use case, @commerce@ exposes
 an extension point to allow custom types to be developed, grouping products
@@ -21,12 +21,13 @@ Follow these steps:
     `com.liferay.commerce.product.api` in its `build.gradle`.
 
 2.  Create a new component and implement the
-    `com.liferay.commerce.product.catalog.rule.CPRuleType` interface.
+    `com.liferay.commerce.product.catalog.rule.CPRuleType` interface to handle
+    your type's business logic.
 
-3.  Extend the administrative screen for your rule type to the Product Catalog Rule
-    portlet. The portlet uses the
-    [Screen Navigation Framework](/develop/tutorials/-/knowledge_base/7_1/screen-navigation-framework),
-    so you can extend it with a another component that contributes an appropriate JSP.
+3.  Create a second component and implement the `CPRuleTypeJSPContributor`
+    interface to extend the Catalog Rule Portlet's administrative screen.
+
+4.  Provide the necessary JSPs to fill in the admin screen's GUI.
 
 First, create a new module. It's `build.gradle` should look like this:
 
@@ -41,10 +42,11 @@ First, create a new module. It's `build.gradle` should look like this:
         compileOnly group: "javax.portlet", name: "portlet-api", version: "3.0.0"
     }
 
-Next, create a component and implement the interface. The example that follows
-enables returns only products whose product name matches text entered by an
-administrator while creating the rule.
+## Implementing `CPRuleType`
 
+Next, create a component and implement the interface. Your custom code is likely
+to be more complex than the example below, which simply matches products to
+a text string entered on the frontend:
 
     import java.util.Locale;
     import java.util.Map;
@@ -161,9 +163,9 @@ contained in it.
     }
 
 Include the `postProcessContextBooleanFilter` method. This method contains the
-same logic as `isSatisfied`, but instead of checking a single product is passed
-in, it modifies the indexer query `booleanFilter` to include `nameSubstring` in
-the query, so that only matching products will be returned.
+same logic as `isSatisfied`, but instead of checking a single product as it is
+passed in, it modifies the indexer query `booleanFilter` to include
+`nameSubstring` in the query, so that only matching products will be returned.
 
     @Override
     public void postProcessContextBooleanFilter(
@@ -194,10 +196,12 @@ interface---all necessary configuration has already been saved in
 
 Implementing the `CPRuleType` interface handles the back-end logic of your rule
 type, but you still need to provide an interface for your administrators. The
-Catalog Rule portlet can be extended using the Screen Navigation Framework, and
-@commerce@ gives you a head start with the `CPRuleTypeJSPContributor` interface.
+Catalog Rule portlet can be extended using the 
+[Screen Navigation Framework](/develop/tutorials/-/knowledge_base/7_1/screen-navigation-framework).
+@commerce@ gives you a head start with the `CPRuleTypeJSPContributor`
+interface.
 
-In this example, the Admin screen extension will add a text field for
+In this example, the admin screen extension will add a text field for
 administrators to provide a value for `nameSubString`. This will require some
 additional dependencies in the module's `build.gradle`:
 
@@ -285,6 +289,16 @@ the previous section called for `name_matcher.jsp`:
 
     <aui:input label="name" name="nameSubstring" type="text" value="<%= nameSubstring %>" />
 
-This JSP yadayadayada... it calls for `init.jsp` to be located one directory up, providing imports:
+This JSP adds a text field to the admin screen for creating a new catalog rule.
+When an administrator makes an entry in the field and saves the rule, the entry
+is passed in as `nameSubstring`. Note that the JSP calls for `init.jsp` to be
+located one directory up, providing imports:
 
-(include init.jsp). Don't conclude with code.
+    <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
+
+    <%@ page import="com.liferay.portal.kernel.util.WebKeys" %>
+
+    <%@ page import="java.lang.reflect.Method" %>
+
+That's it. Substitute your own logic for the name-matching procedure in this
+tutorial, and your new rule type is ready to go.
