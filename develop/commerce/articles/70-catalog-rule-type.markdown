@@ -1,4 +1,4 @@
-# Customizing New Catalog Rule Types
+# Customizing New Catalog Rule Types [](id=customizing-new-catalog-rule-types)
 
 *Catalog Rules* manage the catalog's visibility, determining exactly what
 products each user segment is able to see. Out of the box, there are two types
@@ -42,7 +42,7 @@ First, create a new module. It's `build.gradle` should look like this:
         compileOnly group: "javax.portlet", name: "portlet-api", version: "3.0.0"
     }
 
-## Implementing `CPRuleType`
+## Implementing `CPRuleType` [](id=implementing-cpruletype)
 
 Next, create a component and implement the interface. Your custom code is likely
 to be more complex than the example below, which simply matches products to
@@ -192,7 +192,7 @@ In this example, `update` is only included to satisfy the demands of the
 interface---all necessary configuration has already been saved in
 `cpRule.typeSettingsProperties`.
 
-## Extending the Admin Portlet
+## Extending the Admin Portlet [](id=extending-the-admin-portlet)
 
 Implementing the `CPRuleType` interface handles the back-end logic of your rule
 type, but you still need to provide an interface for your administrators. The
@@ -270,7 +270,7 @@ Finally, include these @Reference annotations:
 Note that the `symbolicname` in the second reference should match the
 `Bundle-SymbolicName` in your module's `bnd.bnd` file.
 
-## Providing the JSPs
+## Providing the JSPs [](id=providing-the-jsps)
 
 You'll need to include at least one JSP in your module. The JSP contributor in
 the previous section called for `name_matcher.jsp`:
