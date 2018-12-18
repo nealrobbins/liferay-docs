@@ -1,18 +1,18 @@
 # Pricing [](id=pricing)
 
-When all you want to do is assign one price to one SKU, you can handle pricing
-in the catalog (see
-[SKUs](web/commerce/documentation/-/knowledge_base/1-0/skus#pricing)). 
-If you want to do anything more sophisticated, you need to understand
-@commerce@'s pricing hierarchy. Specifically, you need to understand the
-difference between a *base price*, a *price list*, a *tiered price*, a *promo
-price*, and a *discount*.
+Pricing in @commerce@ is handled by a hierarchy of prices which are applicable
+in different circumstances. If more than one price applies to a given
+transaction, then the price nearest the top of the hierarchy supersedes others.
 
-A **Base Price** is set in a product's SKUs tab and applies to all purchases of
-that product, unless it is superseded by another price.
+The hierarchy consists of these levels:
+
+A **Base Price** is set in a product's 
+[SKUs](web/commerce/documentation/-/knowledge_base/1-0/skus#pricing) tab and
+applies to all purchases of that product, unless it is superseded by
+another price.
 
 A **Price List** applies prices to specified products for a specified user
-segment. It supersedes the base price.
+segment. If a price list applies to a transaction, it supersedes the base price.
 
 A **Tiered Price** is a price that is applied to orders that meet specified
 quantity requirements. It is only available in the context of a price list, and
@@ -22,17 +22,12 @@ A **Promo Price** can be applied to a base price, a price list price, and to
 a tiered price, superseding each. When a price is superseded by a price list or
 tiered price, its promo is superseded as well.
 
-![Figure 1: The appropriate price will be applied depending on what user segments a buyer belongs to, and on the quantity he purchases.](../../images/price-hierarchy.png)
+A **Discount** operates outside the price hierarchy, and modifies a price (10%
+off, for instance, or $10 off) rather than superseding it. A discount can be
+applied to a product (individually or by category), an order subtotal, shipping
+costs, or to an order total.
 
-Once the appropriate price is applied, a discount can be applied. A **Discount**
-does not supersede a product's price but instead applies a modifier to it.
-
-The discount is the final component that goes into calculating an order's
-subtotal. Then 
-[taxes](web/commerce/documentation/-/knowledge_base/1-0/taxes)
-are applied and then 
-[shipping costs](web/commerce/documentation/-/knowledge_base/1-0/shipping-methods) 
-in order to calculate the total.
+![Figure 1: An order subtitle is the sum cost of all the products in an order, after category and product discounts are applied.](../../images/price-hierarchy2.png)
 
 +$$$
 
