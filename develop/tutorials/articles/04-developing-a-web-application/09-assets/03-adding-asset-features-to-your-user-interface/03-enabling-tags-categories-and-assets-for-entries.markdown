@@ -1,4 +1,17 @@
-  <%@ include file="../init.jsp" %>
+# Enabling Tags, Categories, and Related Assets for Guestbook Entries [](id=enabling-tags-categories-and-related-assets-for-guestbook-entries)
+
+<div class="learn-path-step">
+    <p>Adding Asset Features to Your UI<br>Step 4 of 5</p>
+</div>
+
+Enabling tags, categories, and related assets for guestbook entries is similar 
+to enabling them for guestbooks. It's so similar, you can refer back to the 
+previous step for a detailed explanation. 
+
+Open your `guestbook-web` module's `guestbookwebportlet/edit_entry.jsp` file. 
+Replace its content with the following code: 
+
+    <%@ include file="../init.jsp" %>
 
     <%
     long entryId = ParamUtil.getLong(renderRequest, "entryId");
@@ -48,10 +61,9 @@
                         <liferay-ui:panel defaultState="closed" 
                         extended="<%= false %>" id="entryCategorizationPanel" 
                         persistState="<%= true %>" title="categorization">
-			<aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="categorization">
-											<liferay-asset:asset-categories-selector className="<%= Entry.class.getName() %>" classPK="<%= entryId %>" />
-											
-											<liferay-asset:asset-tags-selector className="<%= Entry.class.getName() %>" classPK="<%= entryId %>" />
+                                <aui:fieldset>
+                                   <liferay-asset:asset-categories-selector className="<%= Entry.class.getName() %>" classPK="<%= entry %>" />
+                                   <liferay-asset:asset-tags-selector className="<%= Entry.class.getName() %>" classPK="<%= entry %>" />
                                 </aui:fieldset>
                         </liferay-ui:panel>
 
@@ -73,3 +85,9 @@
             <aui:button onClick="<%= viewURL.toString() %>" type="cancel" />
         </aui:button-row>
     </aui:form>
+
+Test your JSP by using the Guestbook portlet to add and update Guestbook 
+entries. Try adding and removing tags, categories, and related assets. All these 
+operations should work. 
+
+Well done! Next, you'll enable comments and ratings for guestbook entries. 
