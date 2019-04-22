@@ -1,23 +1,5 @@
 # Scoping Configurations [](id=scoping-configurations)
 
-Applications can have different configurations depending on the scope: per
-virtual instance (a.k.a. `Company`), site (a.k.a. `Group`), or portlet instance.
-The Configuration Provider API (based on the standard OSGi Configuration Admin
-API shown in the previous section) handles this for you.
-
-Scoping the configuration is specifying the scope where the configuration values
-are set or overridden. Anything set at a less granular scope is just a default
-for the configuration. It can always be overridden at the configuration's
-current scope. For example, a site scoped configuration can have its defaults
-set at the system scope (via System Settings). However, once the configuration
-is changed at the site scope, it ignores the higher level scope forever. It can
-also be configured in other places at the same scope. From the database level,
-this means there could be multiple configuration values for the application, all
-scoped to the site level, because the values set in one site don't matter if the
-context in which you need the value is a different site. This is covered in more
-detail
-[here](/discover/portal/-/knowledge_base/7-1/system-settings#configuration-scope).
-
 Here's how to scope a configuration: 
 
 1.  Set the scope in the configuration interface.
@@ -61,8 +43,9 @@ Here is an example:
 
     public interface DDMFormWebConfiguration {
 
-The scope property makes it appear in System Settings so an administrator
-can change its value. In future releases it may serve additional purposes.
+If you set the scope to virtual instance (`COMPANY`), you'll get a UI generated
+for you in the Instance Settings app, just like the UI that was already
+generated in System Setings when you created the configuration interface.
 
 ## Step 2: Enabling the Configuration for Scoped Retrieval [](id=enabling-the-configuration-for-scoped-retrieval)
 

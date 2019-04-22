@@ -18,7 +18,7 @@ directly, the class that wants to access it must
 2.  Be registered with a `ConfigurationBeanDeclaration`.
 
 The tutorial on 
-[scoping configurations]/develop/tutorials/-/knowledge_base/7-1/scoping-configurations) 
+[scoping configurations](/develop/tutorials/-/knowledge_base/7-1/scoping-configurations) 
 demonstrates how to register the configuration with a `ConfigurationBeanDeclaration`.
 
 After registering with a `ConfigurationBeanDeclaration`, you're ready to use a
@@ -27,7 +27,9 @@ obtain a reference to it:
 
 1.  Here's the approach for components:
 
-        @Reference
+        @Referencomponents.e
+
+ NORMAL  SPELL [EN_US]   LPS-89847-instance-settings-redesign  <markdown[+]   markdown  utf-8[unix]  1,120 words   22% ☰   43/191  :  1 
         protected void setConfigurationProvider(ConfigurationProvider configurationProvider) {
             _configurationProvider = configurationProvider;
         }
@@ -82,6 +84,8 @@ you should not be using this directly and use the convenience method in
 
 `getSystemConfiguration`
 : Used to obtain the configuration for the system scope. These settings are
+
+ NORMAL  SPELL [EN_US]   LPS-89847-instance-settings-redesign  <markdown[+]   markdown  utf-8[unix]  1,120 words   22% ☰   43/191  :  1 
 specified by an admin via the System Settings application or with an OSGi
 configuration file.
 

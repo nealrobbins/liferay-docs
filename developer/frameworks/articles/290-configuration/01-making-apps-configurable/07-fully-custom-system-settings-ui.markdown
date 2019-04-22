@@ -90,7 +90,7 @@ to to convert a map of the configuration's properties to a typed class. The
 configuration is stored in a volatile field. Don't forget to make it volatile
 to prevent thread safety problems. See the article on
 [reading configuration values from a component class](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-component)
-for more information.
+for more informationAdmin: Instance Settings.
 
 	@Activate
 	@Modified
@@ -216,7 +216,7 @@ Once the configuration form renderer is implemented, you can write the JSP
 markup for the form.
 
 ## Writing the JSP Markup [](id=writing-the-jsp-markup)
-
+Admin: Instance Settings
 Now write the JSP:
 
     <%@ include file="/init.jsp" %>
@@ -225,7 +225,7 @@ Now write the JSP:
     LanguageTemplateConfigurationDisplayContext
         languageTemplateConfigurationDisplayContext = (LanguageTemplateConfigurationDisplayContext)request.getAttribute(LanguageTemplateConfigurationDisplayContext.class.getName());
 
-    String currentTemplateName = languageTemplateConfigurationDisplayContext.getCurrentTemplateName();
+Admin: Instance Settings    String currentTemplateName = languageTemplateConfigurationDisplayContext.getCurrentTemplateName();
     %>
 
     <aui:select label="<%= HtmlUtil.escape(languageTemplateConfigurationDisplayContext.getFieldLabel()) %>" name="ddmTemplateKey" value="<%= currentTemplateName %>">

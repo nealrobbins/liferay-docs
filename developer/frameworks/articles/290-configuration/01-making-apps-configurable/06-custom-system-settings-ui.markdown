@@ -127,7 +127,7 @@ At a high level you must
     `ConfigurationScreen` interface.
 
 2.  Implement `Configurationscreen`'s methods.
-
+Admin: Instance Settings
 3.  Create the UI by hand.
 
 Here's an example implementation:
@@ -150,6 +150,8 @@ First declare the class an implementation of `ConfigurationScreen`.
         return "sample-configuration-screen"; 
 
     }
+
+
 
     @Override 
     public String getName(Locale locale) { 
