@@ -16,7 +16,6 @@ When you define configuration options in a Java interface, Liferay's
 configuration framework auto-generates a UI, sparing you the trouble of
 developing an interface for your users to select configuration options.
 
-
 |**Note:** To see a working application configuration, deploy the
 |`configuration-action` 
 |[Blade sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
@@ -25,7 +24,6 @@ developing an interface for your users to select configuration options.
 |configuration* entry.
 |
 |Add the *Blade Message Portlet* to a page to test your configuration choices.
-
 
 Complete these three high level tasks to integrate your application with the
 configuration framework: 
@@ -75,8 +73,7 @@ a given application or one of its components.
 : Scope defines where a configuration value applies. Here are the most common
 configuration scopes:
 
--   `SYSTEM`: only one set of configuration values is stored, and applies
-    everywhere.
+-   `SYSTEM`: configuration values apply throughout the system.
 
 -   `COMPANY`: One set of configuration values is stored for each
     virtual instance, so each instance can be configured individually.
@@ -90,6 +87,10 @@ configuration scopes:
 a UI is generated for you in *System Settings*. If your configuration is scoped
 to `COMPANY`, `GROUP`, or `PORTLET_INSTANCE`, an additional UI is generated in
 *Instance Settings*.
+
+|Note: An Instance Settings UI is not currently generated for factory
+|configurations. You can track the progress of this issue
+|[here](https://issues.liferay.com/browse/LPS-94490).
 
 **Default Configurations**
 : Default values for any scoped configuration can be set at any wider scope.

@@ -7,14 +7,18 @@ If you have an app that was configurable using the mechanisms of Liferay Portal
 6.2 and before, refer to 
 [Transitioning from Portlet Preferences to the Configuration API](/develop/tutorials/-/knowledge_base/7-0/transitioning-from-portlet-preferences-to-the-configuration-api).
 
-If you have an app with an instance-scoped configuration interface and a custom
-UI for saving configuration values to `PortletPreferences`, you have two
-options:
+If you have an app with a configuration interface scoped to anything other than
+`SYSTEM` and a custom UI for saving configuration values to
+`PortletPreferences`, you have two options:
 
 -   Keep using your custom UI. Deactivate the auto-generated UI in *Instance
     Settings* by setting the scope in your configuration interface to `SYSTEM`.
     (This is quick and easy, but won't make your code easier to maintain in the
     long term.)
+
+    For other ways to disable the auto-generated UI, see (Link).
+
+    (/developer/frameworks/-/knowledge_base/7-2/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
 
 -   Write an Upgrade Process to convert your configuration values in
     `PortletPreferences` to an instance-scoped OSGi configuration, using the

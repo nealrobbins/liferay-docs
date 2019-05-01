@@ -27,7 +27,6 @@ First, you'll learn how to create a configuration at the system scope.
             public String defaultDisplayView();
 
 
-
         }
 
     It defines two configuration options, the autosave interval (with a default
@@ -50,9 +49,6 @@ First, you'll learn how to create a configuration at the system scope.
     `aQute.bnd.annotation.metatype.Meta`. For more information about this class and
     the `Meta.OCD` and `Meta.AD` annotations, please refer to the [bndtools
     documentation](http://bnd.bndtools.org/chapters/210-metatype.html).
-
-    The cool thing about configuration interfaces is that once you have one, you
-    also have an auto-generated UI! 
 
 2.  To use the `Meta.OCD` and `Meta.AD` annotations in your modules, you must
     [specify a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
@@ -81,8 +77,8 @@ First, you'll learn how to create a configuration at the system scope.
         -metatype: *
 
     This line lets bnd use your configuration interface to generate an XML
-    configuration file. This provides a lot of information about your application's
-    configuration options. Enough, in fact, to generate a 
+    configuration file. This provides the information about your application's
+    configuration options needed to generate a 
     [System Settings](/discover/portal/-/knowledge_base/7-1/system-settings) user 
     interface automatically.
 
