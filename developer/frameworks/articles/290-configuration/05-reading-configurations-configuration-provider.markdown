@@ -1,24 +1,26 @@
-# Reading Configuration Values from a Configuration Provider [](id=reading-configuration-values-from-a-configuration-provider)
+# Reading Scoped Configuration Values [](id=reading-configuration-values-from-a-configuration-provider)
 
-When an application is deployed, it's common to need different configurations
-[depending on the scope](/develop/tutorials/-/knowledge_base/7-1/scoping-configurations).
-That means having different
-configurations for a given application per virtual instance (a.k.a. Company),
-site (a.k.a. Group), or portlet instance. Achieve this with little effort using
-the Configuration Provider API that is based on the standard OSGi Configuration
-Admin API.
+If your configuration is scoped to anything other than `SYSTEM`, you have two
+options for reading configuration values.
+
+-   Use `ConfigurationProvider`. This will work for any kind of configuration,
+    and is the only way to read configuration values at the `COMPANY` and
+    `GROUP` scopes.
+
+-   Use `PortletDisplay`. This is the recommended apporach for configurations
+    at the `PORTLET_INSTANCE` scope, but only works at that scope.
 
 ## Using the Configuration Provider [](id=using-the-configuration-provider)
 
 When using the Configuration Provider, instead of receiving the configuration
 directly, the class that wants to access it must 
 
-1.  Receive a `ConfigurationProvider` to obtain the configuration
+1.  Receive a `ConfigurationProvider` to obtain the configuration.
 
 2.  Be registered with a `ConfigurationBeanDeclaration`.
 
 The tutorial on 
-[scoping configurations](/develop/tutorials/-/knowledge_base/7-1/scoping-configurations) 
+[scoping configurations](/docs/7-2/frameworks/-/knowledge_base/f/scoping-configurations) 
 demonstrates how to register the configuration with a `ConfigurationBeanDeclaration`.
 
 After registering with a `ConfigurationBeanDeclaration`, you're ready to use a
@@ -28,8 +30,6 @@ obtain a reference to it:
 1.  Here's the approach for components:
 
         @Referencomponents.e
-
- NORMAL  SPELL [EN_US]   LPS-89847-instance-settings-redesign  <markdown[+]   markdown  utf-8[unix]  1,120 words   22% ☰   43/191  :  1 
         protected void setConfigurationProvider(ConfigurationProvider configurationProvider) {
             _configurationProvider = configurationProvider;
         }
@@ -41,14 +41,14 @@ obtain a reference to it:
 
 3.  For Spring beans, it is possible to use the same mechanism as for Service
     Builder services (`@ServiceReference`). Check the documentation on 
-    [how to integrate Spring beans with OSGi services](/develop/tutorials/-/knowledge_base/7-1/invoking-services-from-service-builder-code#referencing-an-osgi-service)
+    [how to integrate Spring beans with OSGi services](/docs/7-2/frameworks/-/knowledge_base/f/invoking-services-from-service-builder-code#referencing-an-osgi-service)
     for more details.
 
 4.  For anything else, call the same methods from the utility class,
     `ConfigurationProviderUtil`. Be sure you call the utility methods in
     contexts where the portal is guaranteed to be initialized prior to the
     method call. This class is useful in the 
-    [scripting console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console),
+    [scripting console](/docs/7-2/user/-/knowledge_base/u/running-scripts-from-the-script-console),
     for example. Here's an example method that uses the utility class. It comes
     from the export-import service, which is only called during the import and
     export of content from a running portal:
@@ -84,8 +84,6 @@ you should not be using this directly and use the convenience method in
 
 `getSystemConfiguration`
 : Used to obtain the configuration for the system scope. These settings are
-
- NORMAL  SPELL [EN_US]   LPS-89847-instance-settings-redesign  <markdown[+]   markdown  utf-8[unix]  1,120 words   22% ☰   43/191  :  1 
 specified by an admin via the System Settings application or with an OSGi
 configuration file.
 
