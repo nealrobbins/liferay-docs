@@ -1,5 +1,7 @@
 # Categorizing the Configuration [](id=categorizing-the-configuration)
 
+[TOC levels=1-4]
+
 By default, the configuration UI for your app is generated in *System Settings*
 &rarr; *Platform* &rarr; *Third Party*. You probably don't really want it
 there; by categorizing your configuration you can place it somewhere intuitive

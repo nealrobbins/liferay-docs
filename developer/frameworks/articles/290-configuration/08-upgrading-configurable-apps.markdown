@@ -1,5 +1,7 @@
 # Upgrading a Legacy App
 
+[TOC levels=1-4]
+
 If you have an app was made configurable under an earlier version of @product@,
 you can upgrade with have to reconfigure any of your app's instances.
 

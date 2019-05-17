@@ -1,5 +1,7 @@
 # Scoping Configurations [](id=scoping-configurations)
 
+[TOC levels=1-4]
+
 Here's how to scope a configuration: 
 
 1.  Set the scope in the configuration interface.

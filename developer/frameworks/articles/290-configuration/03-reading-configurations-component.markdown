@@ -1,5 +1,7 @@
 # Reading Configuration Values from a Component [](id=reading-configuration-values-from-a-component)
 
+[TOC levels=1-4]
+
 Once you have the 
 [application configured](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable)
 so that administrators can configure it in System Settings, you might be

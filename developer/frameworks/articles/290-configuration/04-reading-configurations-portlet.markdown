@@ -1,5 +1,7 @@
 # Reading Configuration Values from a MVC Portlet [](id=reading-configuration-values-from-a-mvc-portlet)
 
+[TOC levels=1-4]
+
 It's very common to read configuration values from a portlet class or its JSPs.
 This tutorial shows how to add a configuration to the request and read it from
 the view layer, and how to read it directly in the portlet class. This tutorial
